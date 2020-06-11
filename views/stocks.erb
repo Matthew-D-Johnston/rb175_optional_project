@@ -1,0 +1,39 @@
+<h2>Top Stocks</h2>
+<form method="post" action="/stocks">
+  <div>
+    <label for="type"> Type:
+      <input name="type" id="type" />
+    </label>
+  </div>
+  <div>
+    <label for="period"> Period:
+      <input name="period" id="period" />
+    </label>
+  </div>
+  <div>
+    <label for="earn_or_sales"> Earnings/Sales:
+      <input name="earn_or_sales" id="earn_or_sales" />
+    </label>
+  </div>
+  <div>
+    <label for="sector_index"> Sector Index:
+      <input name="sector_index" id="sector_index" />
+    </label>
+  </div>
+  <div>
+    <label for="index_return"> Index Return:
+      <input name="index_return" id="index_return" />
+    </label>
+  </div>
+  <div>
+    <label for="sp500_return"> S&P 500 Return:
+      <input name="sp500_return" id="sp500_return" />
+    </label>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<p>Or, update the Company Description database.</p>
+<form class="inline" method="get" action="/update">
+  <button type="submit">Update Database</button>
+</form>
+

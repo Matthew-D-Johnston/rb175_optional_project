@@ -77,7 +77,7 @@ Steps:
   end
   ```
 
-#### Top Stocks Page
+#### Top Stocks Input Page
 
 * Create a `get "/stocks"`route.
 
@@ -141,4 +141,204 @@ Steps:
   </form>
   ```
 
-* 
+
+#### Posting Top Stocks Data
+
+* Add a `post "/stocks"` route.
+
+* Add a `configure` method to the `writer.rb` file in order to enable sessions.
+
+* Within the `post "/stocks"` route, assign the submitted data stored in the `params` hash to the `sessions` hash.
+
+  ```ruby
+  # ...
+  
+  configure do
+    enable :sessions
+    set :session_secret, 'super secret'
+  end
+  
+  # ...
+  
+  post "/stocks" do
+    session[:type] = params[:type]
+    session[:period] = params[:period]
+    session[:earn_or_sales] = params[:earn_or_sales]
+    session[:sector_index] = params[:sector_index]
+    session[:index_return] = params[:index_return]
+    session[:sp500_return] = session[:sp500_return]
+  
+    redirect "/stock_story"
+  end
+  ```
+
+#### Top Stocks Story Page
+
+* Add a `get "stock_story"` route to the `writer.rb` file.
+
+* This route will need to render a `stock_story.erb` view template, which will contain the html of the formatted output for the story.
+
+* The template will be divided into 6 different sections: 1) headings; 2) tickers; 3) intro; 4) value; 5) growth; and 6) momentum.
+
+* **The headings section:**
+
+  ```erb
+  <div class="headings">
+    <h2>Headings</h2>
+    <ul>
+      <li><b>HEADING:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
+      <li><b>SUBHEADING:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
+      <li><b>SOCIAL TITLE:</b></li>
+      <li><b>META TITLE:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
+      <li><b>META DESCRIPTION:</b> These are the <%= session[:type].downcase %> stocks with the best value, fastest growth, and most momentum for <%= session[:period] %>.</li>
+    </ul>
+  </div>
+  ```
+
+* **The tickers section:** we will save this section for later as it will rely on files derived from the company data.
+
+* **The intro section:**
+
+  * We need to introduce some `helpers` methods in our `writer.rb` file.
+
+  * The method specific to the intro section is a `compare_performance` method, which will compare the return of the sector index with that of the S&P 500 and return a string phrase that is appropriate for whichever return is greater or if they are equal.
+
+  * We also need a `date` method, which will depend on a `months` method.
+
+    ```ruby
+    # ...
+    
+    helpers do
+      def compare_performance
+        difference = (session[:index_return].to_f - session[:sp500_return].to_f).to_i
+    
+        if difference > 0
+          "outperformed"
+        elsif difference < 0
+          "underperformed"
+        else
+          "on par with"
+        end
+      end
+    
+      def months
+        { 1 => 'January', 2 => 'February', 3 => 'March',
+          4 => 'April', 5 => 'May', 6 => 'June',
+          7 => 'July', 8 => 'August', 9 => 'September',
+          10 => 'October', 11 => 'November', 12 => 'December'
+        }
+      end
+    
+      def date
+        date = Time.now
+        day = date.day
+        month = months[date.month]
+        year = date.year
+        { day: "#{day}", month: "#{month}", year: "#{year}" }
+      end
+    end
+    ```
+
+  * And the html for the view template:
+
+    ```erb
+    <div class="intro">
+      <h2>Intro</h2>
+      <p>
+        <%= session[:type] %> stocks, as represented by the <%= session[:sector_index] %>, have <%= compare_performance %> the broader market, providing investors with a total return of <%= session[:index_return] %> compared to the S&P 500's total return of <%= session[:sp500_return] %> over the past 12 months (YCharts. "Financial Data," Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.). These market performance numbers and the statistics in the tables below are as of <%= date[:month] %> <%= date[:day] %>.
+      </p>
+      <p>
+        <% if session[:earn_or_sales] == "E" %>
+          Here are the top 3 <%= session[:type].downcase %> stocks with the best value, the fastest earnings growth, and the most momentum.
+        <% else %>
+          Here are the top 3 <%= session[:type].downcase %> stocks with the best value, the fastest sales growth, and the most momentum.
+        <% end %>
+      </p>
+    </div>
+    ```
+
+* **The value section:** We will be able to complete some of this, but there is some that will have to wait till we have implemented the data collection.
+
+  ```erb
+  <div class="value">
+    <h2>Best Value <%= session[:type] %> Stocks</h2>
+    <div class="value_intro">
+      <p>
+        <% if session[:earn_or_sales] == "E" %>
+          These are the <%= session[:type].downcase %> stocks with the lowest 12-month trailing price-to-earnings (P/E) ratio. Because profits can be returned to shareholders in the form of dividends and buybacks, a low P/E ratio shows you’re paying less for each dollar of profit generated.
+        <% else %>
+          These are the <%= session[:type].downcase %> stocks with the lowest 12-month trailing price-to-sales (P/S) ratio. For young companies that have not reached profitability, this can provide an idea of how much business you’re getting for each dollar invested.
+        <% end %>
+      </p>
+    </div>
+    <div class="table">
+      <p>Company 1</p>
+      <p>Company 2</p>
+      <p>Company 3</p>
+    </div>
+    <div class="bullets">
+      <ul>
+        <li><b>Company 1:</b></li>
+        <li><b>Company 2:</b></li>
+        <li><b>Company 3:</b></li>
+      </ul>
+    </div>
+  </div>
+  ```
+
+* **The growth section: **We will be able to complete some of this, but there is some that will have to wait till we have implemented the data collection.
+
+  ```erb
+  <div class="growth">
+    <h2>Fastest Growing <%= session[:type] %> Stocks</h2>
+    <div class="growth_intro">
+      <p>
+        <% if session[:earn_or_sales] == "E" %>
+          These are the <%= session[:type].downcase %> stocks with the highest year-over-year (YOY) earnings per share (EPS) growth for the most recent quarter. Rising earnings show that a company’s business is growing and is generating more money that it can reinvest or return to shareholders.
+        <% else %>
+          These are the <%= session[:type].downcase %> stocks with the highest year over year (YOY) sales growth for the most recent quarter. Rising sales show that a company’s business is growing. This is often used to measure growth of young companies that have not yet reached profitability.
+        <% end %>
+      </p>
+    </div>
+    <div class="table">
+      <p>Company 1</p>
+      <p>Company 2</p>
+      <p>Company 3</p>
+    </div>
+    <div class="bullets">
+      <ul>
+        <li><b>Company 1:</b></li>
+        <li><b>Company 2:</b></li>
+        <li><b>Company 3:</b></li>
+      </ul>
+    </div>
+  </div>
+  ```
+
+* **The momentum section: **We will be able to complete some of this, but there is some that will have to wait till we have implemented the data collection.
+
+  ```erb
+  <div class="momentum">
+    <h2><%= session[:type] %> Stocks with the Most Momentum</h2>
+    <div class="momentum_intro">
+      <p>
+        These are the <%= session[:type].downcase %> stocks that had the highest total return over the last 12 months.
+      </p>
+    </div>
+    <div class="table">
+      <p>Company 1</p>
+      <p>Company 2</p>
+      <p>Company 3</p>
+    </div>
+    <div class="bullets">
+      <ul>
+        <li><b>Company 1:</b></li>
+        <li><b>Company 2:</b></li>
+        <li><b>Company 3:</b></li>
+      </ul>
+    </div>
+  </div>
+  ```
+
+#### Company Database
+

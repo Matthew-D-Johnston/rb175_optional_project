@@ -434,3 +434,248 @@ Steps:
   end
   ```
 
+#### Add a `layout.erb` template view
+
+* This will include the link to the `css` style sheet and allow for flash messages.
+
+  ```erb
+  <html>
+    <title>Writer</title>
+    <link href="/writer.css" rel="stylesheet" type="text/css" />
+    <body>
+      <% if session[:message] %>
+        <p class="message"><%= session.delete(:message) %></p>
+      <% end %>
+      <%= yield %>
+    </body>
+  </html>
+  ```
+
+#### Incorporating Stock Data from Excel Files
+
+* Add a method to the `writer.rb` file that will load the company data from the `xlsx` file.
+
+* Each file will continue three rows corresponding to three different stocks.
+
+* In each row will be five columns:
+
+  * For value stocks:
+    * name
+    * ticker
+    * price
+    * market cap
+    * P/E or P/S ratio
+  * For growth stocks:
+    * name
+    * ticker
+    * price
+    * market cap
+    * EPS growth or Sales growth
+  * For momentum stocks:
+    * name
+    * ticker
+    * price
+    * market cap
+    * total return
+
+* The data should be structured in hashes, one for each row/company. The hashes will have to have an order, however, because the data is ranked. An example thus, would be
+
+  ```ruby
+  value1 = { name: "Domino's Pizza", ticker: DPZ, price: 25.43, market_cap: 10.4, ratio: 4.6 }
+  value2 = { name: ...., ratio: 5.8 }
+  value3 = { name: ...., ratio: 7.3 }
+  ```
+
+* Here are the new methods:
+
+  ```ruby
+  def load_xlsx_file(file)
+    file_path = File.join(data_path, file)
+    file_workbook = Roo::Spreadsheet.open(file_path)
+  end
+  
+  def stock_data(file, rank)
+    workbook = load_xlsx_file(file)
+    stock_data = workbook.row(rank)
+    stock_hash = {}
+    stock_hash[:ticker] = stock_data[0]
+    stock_hash[:name] = stock_data[1]
+    stock_hash[:price] = '%.2f' % stock_data[2]
+    stock_hash[:market_cap] = stock_data[3].to_f.round(1)
+    stock_hash[:special] = stock_data[4].to_f.round(1)
+    stock_hash
+  end
+  
+  def group_stock_data(file)
+    { stock_1: stock_data(file, 1),
+      stock_2: stock_data(file, 2),
+      stock_3: stock_data(file, 3)
+    }
+  end
+  
+  def unique_tickers(value, growth, momentum)
+    tickers = []
+    value.each { |_, data| tickers << data[:ticker] }
+    growth.each { |_, data| tickers << data[:ticker] }
+    momentum.each { |_, data| tickers << data[:ticker] }
+    tickers.uniq
+  end
+  ```
+
+* And we now update the `get "/stock_story"` route:
+
+  ```ruby
+  get "/stock_story" do
+    @value_stocks = group_stock_data("value.xlsx")
+    @growth_stocks = group_stock_data("growth.xlsx")
+    @momentum_stocks = group_stock_data("momentum.xlsx")
+    @tickers = unique_tickers(@value_stocks, @growth_stocks, @momentum_stocks)
+  
+    erb :stock_story
+  end
+  ```
+
+* Now, update the `stock_story.erb` view template.
+
+  ```erb
+  <div class="headings">
+    <h2>Headings</h2>
+    <ul>
+      <li><b>HEADING:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
+      <li><b>SUBHEADING:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
+      <li><b>SOCIAL TITLE:</b></li>
+      <li><b>META TITLE:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
+      <li><b>META DESCRIPTION:</b> These are the <%= session[:type].downcase %> stocks with the best value, fastest growth, and most momentum for <%= session[:period] %>.</li>
+    </ul>
+  </div>
+  
+  <div class="tickers">
+    <h2>Tickers</h2>
+    <ul>
+      <% @tickers.each do |ticker| %>
+      <li><%= ticker %></li>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div class="intro">
+    <h2>Intro</h2>
+    <p>
+      <%= session[:type] %> stocks, as represented by the <%= session[:sector_index] %>, have <%= compare_performance %> the broader market, providing investors with a total return of <%= session[:index_return] %> compared to the S&P 500's total return of <%= session[:sp500_return] %> over the past 12 months (YCharts. "<a href="https://ycharts.com/">Financial Data</a>," Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.). These market performance numbers and the statistics in the tables below are as of <%= date[:month] %> <%= date[:day] %>.
+    </p>
+    <p>
+      <% if session[:earn_or_sales] == "E" %>
+        Here are the top 3 <%= session[:type].downcase %> stocks with the best value, the fastest earnings growth, and the most momentum.
+      <% else %>
+        Here are the top 3 <%= session[:type].downcase %> stocks with the best value, the fastest sales growth, and the most momentum.
+      <% end %>
+    </p>
+  </div>
+  
+  <div class="value">
+    <h2>Best Value <%= session[:type] %> Stocks</h2>
+    <div class="value_intro">
+      <p>
+        <% if session[:earn_or_sales] == "E" %>
+          These are the <%= session[:type].downcase %> stocks with the lowest 12-month trailing price-to-earnings (P/E) ratio. Because profits can be returned to shareholders in the form of dividends and buybacks, a low P/E ratio shows you’re paying less for each dollar of profit generated.
+        <% else %>
+          These are the <%= session[:type].downcase %> stocks with the lowest 12-month trailing price-to-sales (P/S) ratio. For young companies that have not reached profitability, this can provide an idea of how much business you’re getting for each dollar invested.
+        <% end %>
+      </p>
+    </div>
+    <div class="table">
+      <% if session[:earn_or_sales] == "E" %>
+        <p> Price    Market Cap ($...)    12-Month Trailing P/E Ratio</p>
+      <% else %>
+        <p> Price    Market Cap ($...)    12-Month Trailing P/S Ratio</p>
+      <% end %>
+      <% @value_stocks.each do |_, data| %>
+        <p>
+          <%= data[:name] %>
+          (<%= data[:ticker] %>)
+          <%= data[:price] %>
+          <%= data[:market_cap] %>
+          <%= data[:special] %>
+        </p>
+      <% end %>
+      <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
+    </div>
+    <div class="bullets">
+      <ul>
+        <li><b>Company 1:</b></li>
+        <li><b>Company 2:</b></li>
+        <li><b>Company 3:</b></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="growth">
+    <h2>Fastest Growing <%= session[:type] %> Stocks</h2>
+    <div class="growth_intro">
+      <p>
+        <% if session[:earn_or_sales] == "E" %>
+          These are the <%= session[:type].downcase %> stocks with the highest year-over-year (YOY) earnings per share (EPS) growth for the most recent quarter. Rising earnings show that a company’s business is growing and is generating more money that it can reinvest or return to shareholders.
+        <% else %>
+          These are the <%= session[:type].downcase %> stocks with the highest year over year (YOY) sales growth for the most recent quarter. Rising sales show that a company’s business is growing. This is often used to measure growth of young companies that have not yet reached profitability.
+        <% end %>
+      </p>
+    </div>
+    <div class="table">
+      <% if session[:earn_or_sales] == "E" %>
+        <p> Price    Market Cap ($...)    EPS Growth(%)</p>
+      <% else %>
+        <p> Price    Market Cap ($...)    Revenue Growth(%)</p>
+      <% end %>
+      <% @growth_stocks.each do |_, data| %>
+        <p>
+          <%= data[:name] %>
+          (<%= data[:ticker] %>)
+          <%= data[:price] %>
+          <%= data[:market_cap] %>
+          <%= data[:special] %>
+        </p>
+      <% end %>
+      <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
+    </div>
+    <div class="bullets">
+      <ul>
+        <li><b>Company 1:</b></li>
+        <li><b>Company 2:</b></li>
+        <li><b>Company 3:</b></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="momentum">
+    <h2><%= session[:type] %> Stocks with the Most Momentum</h2>
+    <div class="momentum_intro">
+      <p>
+        These are the <%= session[:type].downcase %> stocks that had the highest total return over the last 12 months.
+      </p>
+    </div>
+    <div class="table">
+      <p> Price    Market Cap ($...)   12-Month Trailing Total Return (%)</p>
+      <% @momentum_stocks.each do |_, data| %>
+        <p>
+          <%= data[:name] %>
+          (<%= data[:ticker] %>)
+          <%= data[:price] %>
+          <%= data[:market_cap] %>
+          <%= data[:special] %>
+        </p>
+      <% end %>
+      <p>S&P 500 N/A N/A <%= session[:sp500_return].gsub("%", "") %></p>
+      <p><%= session[:sector_index] %> N/A N/A <%= session[:index_return].gsub("%", "") %></p>
+      <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
+    </div>
+    <div class="bullets">
+      <ul>
+        <li><b>Company 1:</b></li>
+        <li><b>Company 2:</b></li>
+        <li><b>Company 3:</b></li>
+      </ul>
+    </div>
+  </div>
+  ```
+
+  

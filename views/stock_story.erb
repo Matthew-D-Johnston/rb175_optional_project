@@ -10,6 +10,12 @@
 </div>
 
 <div class="tickers">
+  <h2>Tickers</h2>
+  <ul>
+    <% @tickers.each do |ticker| %>
+    <li><%= ticker %></li>
+    <% end %>
+  </ul>
 </div>
 
 <div class="intro">
@@ -38,9 +44,20 @@
     </p>
   </div>
   <div class="table">
-    <p>Company 1</p>
-    <p>Company 2</p>
-    <p>Company 3</p>
+    <% if session[:earn_or_sales] == "E" %>
+      <p> Price    Market Cap ($...)    12-Month Trailing P/E Ratio</p>
+    <% else %>
+      <p> Price    Market Cap ($...)    12-Month Trailing P/S Ratio</p>
+    <% end %>
+    <% @value_stocks.each do |_, data| %>
+      <p>
+        <%= data[:name] %>
+        (<%= data[:ticker] %>)
+        <%= data[:price] %>
+        <%= data[:market_cap] %>
+        <%= data[:special] %>
+      </p>
+    <% end %>
     <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
   </div>
   <div class="bullets">
@@ -64,9 +81,20 @@
     </p>
   </div>
   <div class="table">
-    <p>Company 1</p>
-    <p>Company 2</p>
-    <p>Company 3</p>
+    <% if session[:earn_or_sales] == "E" %>
+      <p> Price    Market Cap ($...)    EPS Growth(%)</p>
+    <% else %>
+      <p> Price    Market Cap ($...)    Revenue Growth(%)</p>
+    <% end %>
+    <% @growth_stocks.each do |_, data| %>
+      <p>
+        <%= data[:name] %>
+        (<%= data[:ticker] %>)
+        <%= data[:price] %>
+        <%= data[:market_cap] %>
+        <%= data[:special] %>
+      </p>
+    <% end %>
     <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
   </div>
   <div class="bullets">
@@ -86,9 +114,18 @@
     </p>
   </div>
   <div class="table">
-    <p>Company 1</p>
-    <p>Company 2</p>
-    <p>Company 3</p>
+    <p> Price    Market Cap ($...)   12-Month Trailing Total Return (%)</p>
+    <% @momentum_stocks.each do |_, data| %>
+      <p>
+        <%= data[:name] %>
+        (<%= data[:ticker] %>)
+        <%= data[:price] %>
+        <%= data[:market_cap] %>
+        <%= data[:special] %>
+      </p>
+    <% end %>
+    <p>S&P 500 N/A N/A <%= session[:sp500_return].gsub("%", "") %></p>
+    <p><%= session[:sector_index] %> N/A N/A <%= session[:index_return].gsub("%", "") %></p>
     <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
   </div>
   <div class="bullets">

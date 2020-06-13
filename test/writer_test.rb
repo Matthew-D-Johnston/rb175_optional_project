@@ -3,6 +3,8 @@ ENV["RACK_ENV"] = "test"
 require "minitest/autorun"
 require "rack/test"
 
+require "fileutils"
+
 require_relative "../writer"
 
 class WriterTest < Minitest::Test
@@ -12,8 +14,22 @@ class WriterTest < Minitest::Test
     Sinatra::Application
   end
 
+  def setup
+    FileUtils.mkdir_p(data_path)
+  end
+
+  def teardown
+    FileUtils.rm_rf(data_path)
+  end
+
   def session
     last_request.env["rack.session"]
+  end
+
+  def create_document(name, content = "")
+    File.open(File.join(data_path, name), "w") do |file|
+      file.write(content)
+    end
   end
 
   def test_home
@@ -46,5 +62,22 @@ class WriterTest < Minitest::Test
     assert_includes(last_response.body, "Best Value")
     assert_includes(last_response.body, "Fastest Growing")
     assert_includes(last_response.body, "Most Momentum")
+  end
+
+  def test_company_update_page
+    get "/update"
+
+    assert_equal(200, last_response.status)
+    assert_includes(last_response.body, "Database Update")
+    assert_includes(last_response.body, "Company Name")
+    assert_includes(last_response.body, "Company Description")
+  end
+
+  def test_company_description_database_updated
+    create_document("company_descriptions.yml")
+
+    post "/update", name: "My Company", description: "My Company makes things."
+
+    assert_includes(session[:message], "Database has been updated")
   end
 end

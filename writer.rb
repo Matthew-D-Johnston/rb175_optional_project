@@ -1,6 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
 require "tilt/erubis"
+require "yaml"
 
 configure do
   enable :sessions
@@ -37,6 +38,25 @@ helpers do
   end
 end
 
+def load_company_descriptions
+  descriptions_path = if ENV["RACK_ENV"] == "test"
+    File.expand_path("../test/company_descriptions.yml", __FILE__)
+  else
+    File.expand_path("../company_descriptions.yml", __FILE__)
+  end
+  YAML.load_file(descriptions_path)
+end
+
+def write_company_descriptions(companies)
+  descriptions_path = if ENV["RACK_ENV"] == "test"
+    File.expand_path("../test/company_descriptions.yml", __FILE__)
+  else
+    File.expand_path("../company_descriptions.yml", __FILE__)
+  end
+
+  File.open(descriptions_path, "w") { |file| file.write(companies.to_yaml) }
+end
+
 get "/" do
   erb :home
 end
@@ -49,6 +69,10 @@ get "/stock_story" do
   erb :stock_story
 end
 
+get "/update" do
+  erb :update
+end
+
 post "/stocks" do
   session[:type] = params[:type]
   session[:period] = params[:period]
@@ -58,5 +82,17 @@ post "/stocks" do
   session[:sp500_return] = params[:sp500_return]
 
   redirect "/stock_story"
+end
+
+post "/update" do
+  company_name = params[:name].gsub(" ", "_")
+  company_description = params[:description]
+
+  companies = load_company_descriptions
+  companies[company_name] = company_description
+  write_company_descriptions(companies)
+
+  session[:message] = "Database has been updated with a description for #{params[:name]}"
+  redirect "/update"
 end
 

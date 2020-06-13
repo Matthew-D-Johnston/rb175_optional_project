@@ -15,7 +15,7 @@
 <div class="intro">
   <h2>Intro</h2>
   <p>
-    <%= session[:type] %> stocks, as represented by the <%= session[:sector_index] %>, have <%= compare_performance %> the broader market, providing investors with a total return of <%= session[:index_return] %> compared to the S&P 500's total return of <%= session[:sp500_return] %> over the past 12 months (YCharts. "Financial Data," Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.). These market performance numbers and the statistics in the tables below are as of <%= date[:month] %> <%= date[:day] %>.
+    <%= session[:type] %> stocks, as represented by the <%= session[:sector_index] %>, have <%= compare_performance %> the broader market, providing investors with a total return of <%= session[:index_return] %> compared to the S&P 500's total return of <%= session[:sp500_return] %> over the past 12 months (YCharts. "<a href="https://ycharts.com/">Financial Data</a>," Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.). These market performance numbers and the statistics in the tables below are as of <%= date[:month] %> <%= date[:day] %>.
   </p>
   <p>
     <% if session[:earn_or_sales] == "E" %>
@@ -41,6 +41,7 @@
     <p>Company 1</p>
     <p>Company 2</p>
     <p>Company 3</p>
+    <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
   </div>
   <div class="bullets">
     <ul>
@@ -66,6 +67,7 @@
     <p>Company 1</p>
     <p>Company 2</p>
     <p>Company 3</p>
+    <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
   </div>
   <div class="bullets">
     <ul>
@@ -87,6 +89,7 @@
     <p>Company 1</p>
     <p>Company 2</p>
     <p>Company 3</p>
+    <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
   </div>
   <div class="bullets">
     <ul>

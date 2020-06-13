@@ -340,5 +340,97 @@ Steps:
   </div>
   ```
 
+#### Update to Include Hyperlinks to YCharts
+
+* Update each of the value, growth, and momentum sections of the `stock_story.erb` view template with the following code below the three companies listed in the `<div class="table">` section.
+
+  ```erb
+  <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
+  ```
+
+* Also, update the Intro section with:
+
+  ```erb
+  Ycharts. "<a href="https://ycharts.com/">Financial Data</a>,"
+  ```
+
 #### Company Database
+
+* Now, we need to create a new file in our project directory that will act as the database containing company descriptions.
+
+* Require "yaml" in the main `writer.rb` program file.
+
+* Create a method in the `writer.rb` program file that will load the `company_descriptions.yml` file.
+
+  ```ruby
+  def load_company_descriptions
+    descriptions_path = if ENV["RACK_ENV"] == "test"
+    	File.expand_path("../test/company_descriptions.yml", __FILE__)
+  	else
+    	File.expand_path("../company_descriptions.yml", __FILE__)
+  	end
+  	YAML.load_file(descriptions_path)
+  end
+  ```
+
+* Now create a method that will write company descriptions to our `company_descriptions.yml` file.
+
+  ```ruby
+  def write_company_descriptions(companies)
+    descriptions_path = if ENV["RACK_ENV"] == "test"
+    	File.expand_path("../test/company_descriptions.yml", __FILE__)
+  	else
+    	File.expand_path("../company_descriptions.yml", __FILE__)
+  	end
+  
+  	File.open(descriptions_path, "w") { |file| file.write(companies.to_yaml) }
+  end
+  ```
+
+* Now, create a `get "update"` route in the `writer.rb` file.
+
+* This route should render an `update.erb` views template with two fields for inputting data: 1) a field for the company name; and 2) a field for the company description. These fields should be followed by a Submit button.
+
+  ```erb
+  <h2>Top Stocks: Company Description Database Update</h2>
+  <% if session[:message] %>
+    <p class="message"><%= session.delete(:message) %></p>
+  <% end %>
+  <form method="post" action="/update">
+    <div>
+      <p>
+        <label for="name"> <b>Company Name:</b>
+          <input name="name" id="name" />
+        </label>
+      </p>
+    </div>
+    <div>
+      <p>
+        <label for="description"> <b>Company Description:</b>
+        </label>
+      </p>
+      <p>
+        <textarea name="description" id="description" rows="6" cols="80"></textarea>
+      </p>
+      </p>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  ```
+
+* Add a `post "/update"` route to the `writer.rb` file.
+
+  ```ruby
+  post "/update" do
+    company_name = params[:name].gsub(" ", "_")
+    company_description = params[:description]
+  
+    companies = load_company_descriptions
+    companies[company_name] = company_description
+    write_company_descriptions(companies)
+  
+    session[:message] = "Database has been updated with a description for #{params[:name]}"
+    redirect "/update"
+  end
+  ```
 

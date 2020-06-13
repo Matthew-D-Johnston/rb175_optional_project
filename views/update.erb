@@ -1,0 +1,24 @@
+<h2>Top Stocks: Company Description Database Update</h2>
+<% if session[:message] %>
+  <p class="message"><%= session.delete(:message) %></p>
+<% end %>
+<form method="post" action="/update">
+  <div>
+    <p>
+      <label for="name"> <b>Company Name:</b>
+        <input name="name" id="name" />
+      </label>
+    </p>
+  </div>
+  <div>
+    <p>
+      <label for="description"> <b>Company Description:</b>
+      </label>
+    </p>
+    <p>
+      <textarea name="description" id="description" rows="6" cols="80"></textarea>
+    </p>
+    </p>
+  </div>
+  <button type="submit">Submit</button>
+</form>

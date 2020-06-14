@@ -1,7 +1,742 @@
 ---
-The_Home_Depot: The Home Depot operates a hardware store chain.
-The_Donut_Shop: The Donut Shop makes delicious donuts.
-Kal_Tire: Kal Tire makes donuts.
-Kelly's_Auto: Kelly's Auto is an auto mechanic shop.
-Pizza_Pizza: Pizza Pizza makes pizzas.
-Bob's_Repair_Shop: Bob's Repair Shop repairs whatever you want.
+Activision_Blizzard_Inc: Activision Blizzard publishes, develops, and distributes
+  video games and related products. Some of its popular franchises include Call of
+  Duty, Guitar Hero, and World of Warcraft.
+Advanced_Micro_Devices_Inc: Advanced Micro Devices is a global semiconductor company
+  that offers products such as microprocessors, chipsets, graphics, video and multimedia
+  products, and provides assembling, testing, and packaging services.
+Africa_Oil_Corp: Africa Oil is a Canada-based oil and gas exploration and production
+  company with operations in Kenya and Ethiopia.
+Air_Products_&_Chemicals_Inc: Air Products & Chemicals is a company engaged in the
+  manufacture and distribution of atmospheric and specialty gases, as well as related
+  products. The company provides oxygen, nitrogen, argon, helium, polyurethane, epoxy
+  curatives, and resins.
+Alaska_Air_Group_Inc: Alaska Air operates and manages more than 1,200 daily flights
+  to 115 destinations in the United States, Mexico, Canada, and Costa Rica.
+Alexion_Pharmaceuticals_Inc: Alexion is a biopharmaceutical company that researches
+  and develops drug treatments for autoimmune and cardiovascular diseases.
+Align_Technology_Inc: Align Technology designs and manufactures the Invisalign system,
+  which is a method for treating the misalignment of teeth.
+Alliant_Energy_Corp: Alliant Energy is a public-utility services company that supplies
+  electricity, natural gas, and water to residential and commercial customers. The
+  company serves customers in Illinois, Iowa, Minnesota, and Wisconsin.
+Alphabet_Inc: Alphabet, the parent of Google, is a holding company that, through its
+  subsidiaries, offers web-based search, advertisements, maps, software applications,
+  mobile operating systems, consumer content, enterprise solutions, commerce, and
+  hardware products.
+Amazon.com_Inc: Online retailer Amazon.com offers a range of products across many
+  areas, as well as a platform for buyers and sellers to connect. The company also
+  offers streaming media, cloud computing, and various other services.
+Ambev_SA: Ambev is a Brazil-based company primarily engaged in the production and
+  distribution of beer. The company also produces and distributes soft drinks and
+  other non-alcoholic beverages including non-carbonated beverages.
+American_Airlines_Group_Inc: American Airlines is engaged in the operation of a worldwide
+  airline transportation network.
+American_Water_Works_Co_Inc: American Water Works is a holding company that provides
+  water, wastewater, and other water-related services.
+AmerisourceBergen_Corp: AmerisourceBergen provides generic pharmaceuticals, over-the-counter
+  health care products, home health care supplies and equipment, and related services
+  to health care providers.
+Amyris_Inc: Amyris is an industrial biotechnology company that produces high performance
+  products for the health and wellness, clean beauty, and flavor and fragrance markets.
+  The company uses cannabis in some of its products.
+Anheuser-Busch_InBev_SA/NV: Anheuser-Busch is a Belgium-based holding company engaged
+  in the manufacture and distribution of alcoholic and non-alcoholic beverages. The
+  company owns a portfolio of more than 400 different beer brands including Budweiser,
+  Corona, and Stella Artois.
+Apartment_Investment_&_Management_Co: A self-administered REIT, Apartment Investment
+  & Management owns and manages a portfolio of apartment complexes in the U.S. and
+  Puerto Rico.
+Aphria_Inc: Aphria is a Canada-based company engaged in the production and sale of
+  medical and recreational cannabis.
+Apple_Inc: Apple is engaged in the design, manufacture, and sale of smartphones, personal
+  computers, tablets, wearables and accessories, and a variety of other related software,
+  services, and networking solutions.
+Arconic_Inc: Arconic manufactures and sells lightweight metals for use in aerospace,
+  automotive, commercial transportation, packaging, building, construction, and industrial
+  applications.
+Archer-Daniels_Midland_Co: Archer-Daniels Midland procures, transports, stores, processes,
+  and merchandises agricultural commodities, products, and ingredients worldwide.
+  The company processes oilseeds, corn, milo, oats, barley, peanuts, wheat, and more.
+Archrock_Inc: Archrock is a contract operations services company that provides maintenance,
+  service, and equipment for oil and natural gas production, processing, and transportation
+  applications.
+Arena_Pharmaceuticals_Inc: Serving clients in the U.S. and Switzerland, Arena Pharmaceuticals
+  is responsible for a receptor-based screening capability used across multiple biotechnological
+  applications.
+Assurant_Inc: Assurant provides a variety of extended service contracts, vehicle protection
+  services, and insurance products. The company serves customers around the world.
+Atmos_Energy_Corp: Atmos engages in the regulated natural gas distribution and pipeline
+  and storage businesses. The company also operates non-utility businesses, providing
+  natural gas marketing and procurement services.
+Aura_Minerals_Inc: Aura Minerals is a Canada-based mineral exploration and production
+  company with operations in the Americas. The company focuses on the production of
+  gold, copper, silver, and iron ore.
+Aurora_Cannabis_Inc: Aurora Cannabis is a Canada-based company engaged in the production,
+  distribution, and sale of cannabis products.
+Axsome_Therapeutics_Inc: Axsome Therapeutics is a biopharmaceutical company that develops
+  drug treatments for central nervous system disorders as well as other health issues.
+B2Gold_Corp: B2Gold is a Canada-based mining company that focuses exclusively on gold
+  production. The company operates mining facilities and exploration projects throughout
+  the Americas as well as in Africa, Europe, and Asia.
+Ball_Corp: Ball Corp. provides metal packaging and similar products to a variety of
+  clients across the food, beverage, and household product industries. The company
+  also serves government and aerospace clients.
+Ballard_Power_Systems_Inc: Ballard Power Systems is a Canada-based energy company
+  that designs, develops, manufactures, sells and services hydrogen fuel cells for
+  a variety of applications.
+Barrick_Gold_Corp: Barrick Gold is a Canada-based mining company principally engaged
+  in the production and sale of gold and copper. The company has operating mines and
+  development projects in the U.S., Canada, South America, Australia, and Africa.
+Biogen_Inc: Biogen focuses on the discovery, development, and commercialization of
+  pharmaceutical treatments, with a strong focus on the fields of neurology, immunology,
+  and oncology.
+Bio-Techne_Corp: Bio-Techne manufactures and sells a variety of biotechnology products,
+  including immunoassays, growth factors, proteins, and more.
+Boston_Beer_Co_Inc: Boston Beer is a brewer engaged in the business of producing and
+  selling craft-brewed beers and cider products at its own breweries and various other
+  contract breweries.
+Boston_Properties_Inc: Boston Properties operates as a REIT that owns, manages, and
+  develops office properties primarily in Boston, Washington, D.C., Midtown Manhattan,
+  and San Francisco.
+Boston_Scientific_Corp: Boston Scientific specializes in minimally invasive medical
+  devices and markets a variety of products used in endoscopy, cardiology, urology,
+  and more.
+Brown-Forman_Corp: Brown-Forman produces and distributes alcoholic beverages. The
+  company's main products include branded whiskey, vodka, wines, tequila, bourbon,
+  and gin.
+Cabot_Oil_&_Gas_Corp: Cabot Oil & Gas develops and explores oil and gas properties
+  throughout North America, including locations in Texas, the Rocky Mountains, and
+  Western United States.
+Cadence_Design_Systems_Inc: Cadence Design Systems provides solutions that enable
+  its customers to design electronics products. The company offers software technology,
+  as well as design and consulting services and technology that can be used in the
+  design and development of complex chips and electronic systems, including semiconductors.
+Campbell_Soup_Co: Campbell Soup manufactures and markets food and beverage products,
+  including Prego pasta sauces, Pace Mexican sauces, Kettle Brand potato chips, Emerald
+  nuts, V8 juices, and more.
+Canacol_Energy_Ltd: Canacol Energy is a Canada-based oil and gas exploration and production
+  company with operations in Colombia and Ecuador.
+Canadian_National_Railway_Co: Canadian National Railway is a Canada-based company
+  engaged in the rail transportation business. The company operates a rail network
+  throughout Canada and the U.S., and transports forest products, grain and grain
+  products, coal, sulfur, fertilizers, and automotive products.
+Canadian_Pacific_Railway_Ltd: Canadian Pacific Railway is a Canada-based company that
+  offers rail transportation services, including intermodal shipping, rail siding
+  construction, and logistics services.
+Canadian_Solar_Inc: Canadian Solar is a Canada-based solar power company that designs,
+  manufactures, and sells solar module products that convert sunlight into electricity.
+Capital_One_Financial_Corp: Capital One Financial is a bank holding company that offers
+  financial products and services, including non-interest bearing and interest-bearing
+  deposits, loans, credit and debit card products, and online banking.
+Cara_Therapeutics_Inc: Cara Therapeutics is a clinical-stage biopharmaceutical company
+  engaged in the research, development, and commercialization of pharmaceutical products.
+  The company offers novel drugs used to treat human diseases associated with pain
+  and inflammation.
+Carlsberg_A/S: Carlsberg is a Denmark-based brewing company primarily engaged in the
+  production and marketing of beer. The company also produces non-alcoholic beverages
+  such as non-alcoholic beer and soft drinks. The company's portfolio of brands include
+  Carlsberg, Kronenbourg, and Tuborg, among others.
+CarMax_Inc: CarMax is a holding company that operates as a retailer of used vehicles.
+  The company sells used vehicles, purchases used vehicles for customers, sells related
+  products and services, and arranges financing options for customers. Its products
+  and services include retail merchandising, wholesale auctions, extended protection
+  plans, reconditioning and service, and customer credit.
+CenterPoint_Energy_Inc: CenterPoint Energy is a public utility holding company that,
+  through its subsidiaries, owns and operates electric transmission and distribution
+  facilities, and natural gas distribution facilities.
+Central_Japan_Railway_Co: Central Japan Railway is a Japan-based company primarily
+  focused on railway services. The company also offers bus transportation and real
+  estate services, and operates department stores, hotels, restaurants, and construction
+  businesses.
+Changyou.com_Ltd: Chinese video game developer Changyou.com is known for its massively
+  multiplayer online role-playing games (MMORPGs), including Tian Long Ba Bu.
+Charter_Communications_Inc: Charter Communications is a cable operator and broadband
+  communications services company providing video, Internet and voice services to
+  residential, and business customers. The company also sells video and online advertising,
+  fiber-delivered communications, and information technology solutions to large enterprise
+  customers. Additionally, Charter owns and operates regional sports networks and
+  local sports, news, and community channels.
+Chesapeake_Energy_Corp: Chesapeake Energy is an independent exploration and production
+  company that engages in the acquisition, exploration, and development of oil and
+  natural gas properties.
+Chevron_Corp: Chevron is an integrated energy company that provides administrative,
+  financial management, and technology support for energy and chemical operations.
+  The company is engaged in the exploration, development, production, transportation,
+  and refining of crude oil and natural gas.
+Chipotle_Mexican_Grill_Inc: Chipotle owns and operates fast-casual, fresh Mexican
+  food restaurants. The menu includes items such as burritos, tacos, burrito bowls,
+  and salads.
+Chubb_Ltd: Chubb is an insurance company offering personal and commercial insurance
+  products in a variety of areas.
+Cimarex_Energy_Co: Cimarex Energy is a crude oil and natural gas exploration and production
+  company, operating primarily in the Midwest and the state of Texas.
+Cleveland-Cliffs_Inc: Cleveland-Cliffs produces mines iron ore, produces iron ore
+  pellets, lumps, and other materials for use in the global steel industry.
+Coca-Cola_Co: Coca-Cola is a non-alcoholic beverage company engaged in the manufacture
+  and sale of nonalcoholic beverages, including soft drinks, water, enhanced water
+  & sports drinks, juice, dairy and plant-based beverages, tea & coffee, and energy
+  drinks.
+Commercial_Metals_Co: Commercial Metals works in steel, industrial minerals, ferroalloys,
+  and other metals. The company is involved in manufacturing and recycling.
+Companhia_Siderurgica_Nacional: Among the largest steel-makers in Latin America, Brazil-based
+  Companhia Siderurgica Nacional produces a variety of semi-finished steel products
+  for use across multiple industries.
+Conagra_Brands_Inc: Conagra Brands engages in the manufacture and marketing of processed
+  and packaged foods. The company produces and sells items including packaged meals,
+  condiments, entrees and sides, snacks, specialty potatoes, milled grain ingredients,
+  dehydrated vegetables and seasonings, and blends.
+ConocoPhillips: ConocoPhillips is an oil exploration and production company engaged
+  in the processing, refining, and marketing of crude oil, natural gas, and petroleum
+  products. The company has operations throughout the world.
+Constellation_Brands_Inc: Constellation Brands is an alcoholic beverage company engaged
+  in the production, marketing, and distribution of beer, wine, and spirits.
+Continental_Gold_Inc: Continental Gold is a Canada-based exploration and development
+  company focused on gold production.
+Costco_Wholesale_Corp: Costco operates membership warehouses in multiple countries.
+  The company's merchandise includes food, beverages, cleaning supplies, appliances,
+  health and beauty products, hardware, electronics, and pharmaceutical products.
+Cronos_Group_Inc: Cronos Group is a Canada-based diversified cannabis company that
+  produces and distributes medical cannabis products as well as cannabis oils.
+Crown_Castle_International_Corp: Crown Castle International is a REIT that owns, operates,
+  and leases shared wireless infrastructure. The company operates and leases cell
+  towers and a network of fiber-optic cables throughout the U.S. and Puerto Rico.
+Curaleaf_Holdings_Inc: Curaleaf Holdings is a Canada-based holding company that, through
+  its subsidiaries, engages in the production and distribution of cannabis products.
+Dentsply_Sirona_Inc.: Dentsply Sirona makes and delivers dental supplies, including
+  endodontic products, prosthetics, and more, on a global basis.
+Delta_Air_Lines_Inc: Delta Air Lines offers air transportation and related services
+  for customers, freight, and mail.
+Diamondback_Energy_Inc: Diamondback Energy seeks the development, exploration, and
+  exploitation of oil and natural gas resources in the energy-rich Permian Basin,
+  located in Texas.
+Digital_Realty_Trust_Inc: Another example of a REIT, Digital Realty Trust owns and
+  manages technology-focused real estate properties across the U.S. and England.
+Discover_Financial_Services: " Discover Financial Services is a credit card issuer
+  and electronic payment services provider. Besides credit cards, Discover offers
+  a variety of loans, money market accounts, and certificates of deposit, as well
+  as a network of automated teller machines."
+Discovery_Inc: Discovery is a global media company providing content across a number
+  of distribution platforms, including pay-television, free-to-air and broadcast television,
+  and digital distribution and content licensing arrangements.
+Dollar_General_Corp: Dollar General is a discount retailer. The company provides a
+  wide variety of merchandise, including paper and cleaning items, food, health and
+  beauty products, tobacco products, kitchen supplies, apparel, gardening supplies,
+  and pet supplies.
+Dominion_Energy_Inc: Dominion Energy is a producer and transporter of energy products.
+  The company provides natural gas and electric energy transmission, gathering, and
+  storage solutions.
+DRDGold_Ltd: DRDGold is a South Africa-based gold mining company. The company owns
+  and operates underground mines and surface-retreatment operations in South Africa.
+DR_Horton_Inc: D.R. Horton is a national homebuilder engaged in the construction and
+  sale of single-family housing. The company also provides mortgage financing and
+  title agency services to homebuyers.
+Duke_Realty_Corp: With properties in the southeastern, midwestern, and southern U.S.,
+  Duke Realty is focused mainly on industrial and office spaces.
+Durect_Corp: Focused on chronic diseases, Durect Corp. aims to create pharmaceutical
+  products which can take the place of multiple injection therapy and oral dosing.
+East_Japan_Railway_Co: East Japan Railway is a Japan-based company primarily engaged
+  in the railway business, offering services such as the bullet train network and
+  the Tokyo metropolitan network. The company also leases real estate and is engages
+  in the operation of hotel, travel, and restaurant businesses.
+Eastman_Chemical_Co: Eastman Chemical produces industrial chemicals, fibers, plastics,
+  and additives used by a wide range of industries.
+Ewards_Lifesciences_Corp: Edwards Lifesciences is a medical technology company focused
+  on the production of heart valves and similar products.
+Electronic_Arts_Inc: Electronic Arts is best known as a video game company. The company
+  develops, publishes, and markets video game software for consoles, personal computers,
+  mobile phones, and tablets.
+Enphase_Energy_Inc: Enphase Energy provides solar energy cells and monitoring equipment
+  for distributors, large installers, original equipment manufacturers, strategic
+  partners, and homeowners.
+Entergy_Corp: Entergy is an integrated energy company engaged in electric power production
+  and retail electric distribution operations.
+Equinix_Inc: Equinix is a REIT that provides colocation space and related services.
+  The company provides customers with access to a selection of business partners and
+  solutions based on their colocation, interconnection, and managed IT service needs.
+Eversource_Energy: Eversource Energy is a utility holding company that engages in
+  the generation, transmission, and distribution of natural gas and electricity.
+Exelon_Corp: Exelon is a utility services holding company that, through its subsidiaries,
+  engages in the generation and distribution of energy.
+Expedia_Group_Inc: Expedia provides online travel services for leisure and small business
+  travelers. The company provides a range of travel shopping and reservation services,
+  including real-time access to schedule, pricing, and availability information for
+  airlines, hotels, and car rental companies.
+Facebook_Inc: Facebook as a business is synonymous with the company's namesake social
+  networking platform. This service allows individuals to communicate with other users
+  through sharing of information, photographs, videos, messages, and more. In addition
+  to its main social-networking platform, Facebook operates Instagram, Messenger,
+  WhatsApp, and Oculus.
+Federal_Realty_Investment_Trust: Federal Realty Investment Trust is a REIT that owns,
+  manages, and redevelops retail and mixed-use properties primarily located in affluent
+  communities in different locations throughout the U.S.
+FMC_Corp: FMC manufactures herbicides, insecticides, and other agricultural chemicals.
+  The company serves customers around the world.
+Fortive_Corp: Fortive is a diversified company engaged in the design, development,
+  manufacture, and marketing of professional and engineered products, as well as software
+  and services for a range of end-use markets.
+Fortune_Brands_Home_&_Security_Inc: Fortune Brands sells a variety of home goods,
+  including plumbing, accessories, cabinetry, windows, and more. The company also
+  specializes in security products and storage tools.
+Forty_Seven_Inc: Forty Seven is a clinical-stage immuno-oncology company developing
+  novel therapies to contribute to cancer treatment strategies.
+Frontera_Energy_Corp: Frontera Energy is a Canada-based oil company engaged in the
+  exploration, development, and production of crude oil and natural gas. It has operations
+  throughout the world but are primarily located in South America.
+Fox_Corp: Fox is a television company that operates cable news channels such as Fox
+  News and Fox Sports. They also operate a series of broadcast television stations
+  throughout the U.S.
+Galapagos_NV: Headquartered in Belgium, Galapagos develops clinical stage pharmaceuticals
+  for illnesses that include rheumatoid arthritis, Crohn's disease, ulcerative colitis,
+  and cystic fibrosis.
+Gartner_Inc: Gartner is a research and advisory company that provides insight on computer
+  hardware, software, communications, and related information technology.
+General_Mills_Inc: General Mills manufactures and markets branded consumer foods and
+  pet food products sold through retail stores. The company also is a supplier of
+  branded and unbranded food products to the foodservice and commercial baking industries.
+General_Motors_Co: GM designs, manufactures, and sells cars, trucks, crossovers, and
+  automobile parts. The company also offers automotive financing.
+Genmab_A/S: Genmab is a Denmark-based biotechnology company that specializes in the
+  development of antibody therapeutics for the treatment of cancer.
+Gilead_Sciences_Inc: Gilead Sciences makes drugs for the treatment of human immunodeficiency
+  virus (HIV), liver disease, pulmonary arterial hypertension, chronic angina, invasive
+  fungal infections, and other ailments.
+Gran_Colombia_Gold_Corp: Gran Colombia Gold is a Canada-based gold and silver exploration
+  and development company with operations in Colombia.
+Green_Thumb_Industries_Inc: Green Thumb Industries operates as a pharmaceutical company
+  that manufactures and distributes medical marijuana and cannabis products.
+Greenbrier_Companies_Inc: Greenbrier Companies is primarily engaged in the design,
+  manufacture, and marketing of railroad freight car equipment. The company manufactures
+  both railcars and marine vessels, provides repair and refurbishment for intermodal
+  and conventional railcars, and provides complementary leasing and services.
+Gulfport_Energy_Corp: Gulfport Energy is an oil and natural gas exploration and production
+  company. Its principal producing properties are located along the Louisiana Gulf
+  Coast.
+GW_Pharmaceuticals_PLC: GW Pharmaceuticals is a U.K.-based biopharmaceutical company
+  that engages in the research and development of cannabinoid medicines for the treatment
+  of cancer pain, Multiple Sclerosis, and neuropathic pain.
+Hannon_Armstrong_Sustainable_infrastructure_Capital: Hannon Armstrong Sustainable
+  Infrastructure is a provider of debt and equity financing to renewable energy companies
+  focused on addressing climate change.
+Harley-Davidson_Inc: Harley-Davidson engages in the manufacture and sale of custom,
+  cruiser, and touring motorcycles. In addition to manufacturing motorcycles and related
+  parts, and offering related services, the company also provides financing and insurance-related
+  programs to Harley-Davidson dealers and their retail customers.
+Harsco_Corp: Harsco is an industrial services and engineered products company. The
+  company provides industrial mill services, gas control, containment products, scaffolding
+  services, railway maintenance, and more.
+Harvest_Health_&_Recreation_Inc: Harvest Health & Recreation is a Canada-based cannabis
+  company that specializes in cultivation, dispensaries, and production facilities
+  for medicinal and recreational marijuana.
+Hasbro_Inc: Hasbro designs, manufactures, and markets toys, games, interactive software,
+  puzzles, and infant products. Some of the company's brands include Monopoly, My
+  Little Pony, Nerf, Play-Doh, and Transformers.
+Healthpeak_Properties_Inc: Healthpeak Properties operates as a REIT that invests in
+  real estate properties related to health care, including senior housing, life sciences,
+  medical offices, hospitals, and skilled nursing homes.
+Heineken_NV: Netherlands-based Heineken produces beers, spirits, wine, and soft drinks
+  for sale around the world.
+Helmerich_&_Payne_Inc: Helmerich & Payne, a horizontal and directional driller, provides
+  contract services at oil and gas wells in South America and the Gulf of Mexico.
+Hess_Corp: Hess is a global energy company engaged in the exploration, development,
+  marketing, refining, and transportation of natural gas and crude oil products.
+HollyFrontier_Corp: Petroleum company HollyFrontier is involved in refining, storage,
+  transportation, and more. The firm markets its products throughout North America.
+Horizon_Therapeutics_PLC: Horizon Therapeutics is an Ireland-based biopharmaceutical
+  company that researches, develops, and markets late-stage biopharmaceutical therapies
+  for the treatment of pain, inflammation, orphan diseases, and other illnesses.
+Host_Hotels_&_Resorts_Inc: Host Hotels & Resorts operates as a REIT engaged in the
+  management of luxury and upper-upscale hotels.
+HP_Inc: HP offers imaging and printing systems, computing systems, mobile devices,
+  solutions, and services for households and businesses. The company's products include
+  laser and inkjet printers, scanners, copiers and faxes, personal computers, storage
+  solutions, and other computing and printing systems.
+iAnthus_Capital_Holdings_Inc: iAnthus Capital is a Canada-based holding company that,
+  through its subsidiaries, provides financing and related management and advisory
+  services to licensed operators engaged in the cultivation, manufacturing, and dispensing
+  of cannabis.
+IHS_Markit_Ltd: IHS Markit is a London-based analytics and information provider, with
+  customers in a variety of different sectors and industries.
+Indivior_PLC: Headquartered in England, Indivior manufactures and processes pharmaceutical
+  products for both human and veterinary applications.
+Innovative_Industrial_Properties_Inc: Innovative Industrial Properties is a real estate
+  company that engages in the acquisition, ownership and management of industrial
+  properties. The company's real estate investments consist primarily of properties
+  used for the cultivation and production of medical-use cannabis.
+Innoviva_Inc: Innoviva is an asset management company focused on health care that
+  engages in the development, commercialization, and financial management of biopharmaceuticals.
+International_Flavors_&_Fragrances_Inc: International Flavors & Fragrances creates
+  and manufactures fragrance and flavor chemical formulations for personal care, food,
+  beverage, and other industries.
+Invesco_Mortgage_Capital_Inc: Invesco Mortgage Capital is a real estate investment
+  trust (REIT) that acquires, finances, and manages residential and mortgage-backed
+  securities and mortgage loans.
+Jadestone_Energy_Inc: Jadestone Energy, formerly Mitra Energy Inc., is a Singapore-based
+  oil and gas company that engages in exploration, appraisal, and development of oil
+  and gas properties.
+JinkoSolar_Holding_Co_Ltd: JinkoSolar is a China-based solar energy company that manufactures
+  solar products including silicon wafers, solar cells, and solar modules. The company
+  also offers solar system integration services.
+JM_Smucker_Co: JM Smucker manufactures food products for global sale. The company
+  is best known for its fruit spreads, peanut butters, and shortenings and oils.
+K92_Mining_Inc: K92 Mining is a Canada-based mineral exploration and production firm
+  focused on the Kainantu gold mine in Papua New Guinea.
+Kansas_City_Southern: Kansas City Southern is a holding company that, through its
+  subsidiaries, operates a railroad system providing shippers with freight services
+  in commercial and industrial markets in the U.S. and Mexico.
+Karyopharm_Therapeutics_Inc: Karyopharm Therapeutics is an oncology-focused pharmaceutical
+  company. The company engages in the discovery, development, and commercialization
+  of a variety of drugs used in the treatment of cancer and other diseases.
+Kinder_Morgan_Inc: Kinder Morgan is an energy infrastructure company that owns and
+  operates pipelines that transport crude oil, natural gas, and other products. The
+  company also operates energy storage facilities.
+Kinross_Gold_Corp: Kinross Gold is a Canada-based gold mining company engaged in the
+  exploration, development, and production of gold with properties in Canada, the
+  U.S., Russia, Brazil, Ecuador, Chile, Ghana, and Mauritania.
+Kodiak_Sciences_Inc: Kodiak Sciences is a biopharmaceutical company that develops
+  therapies for high-prevalence diseases of the eye.
+Kohl's_Corp: Kohl's operates a chain of department stores that sell a broad range
+  if items, including apparel, footwear, and accessories for women, men, and children,
+  as well as home products like sheets and pillows.
+Lam_Research_Corp: Lam Research supplies wafer fabrication equipment and services
+  to the semiconductor industry. The company designs, manufactures, markets, and services
+  semiconductor processing systems that are used in the fabrication of integrated
+  circuits.
+Leidos_Holdings_Inc: Leidos Holdings is a global science and technology company engaged
+  in the provision of scientific, engineering, systems integration, and technical
+  services and solutions in the areas of national security, engineering, and health.
+Liberty_Gold_Corp: Liberty Gold is a Canada-based mining services company, providing
+  extraction and explorations services, and the production of gold, copper, silver,
+  and other metals.
+Ligand_Pharmaceuticals_Inc: Ligand Pharmaceuticals acquires and licenses technologies
+  and delivery systems that help other pharmaceutical companies develop medicines.
+LyondellBasell_Industries_NV: " LyondellBasell is a chemical company based in the
+  Netherlands that refines and produces plastic resins and other chemicals. These
+  are used in the manufacturing of lightweight plastics, construction materials, automotive
+  components, durable textiles, and bio fuels."
+Macy's_Inc: Macy's is a department store retailer that sells a wide range of merchandise,
+  including apparel, accessories, cosmetics, home furnishings, and other consumer
+  goods.
+Marathon_Petroleum_Corp: Marathon Petroleum is a crude oil refining company. The company
+  refines, markets, and transports petroleum products throughout the U.S.
+MarketAxess_Holdings_Inc: MarketAxess operates a platform for corporate and emerging
+  market bond trading. Serving broker-dealer clients, the company offers price discovery,
+  trade execution, and related services.
+Marsh_&_McLennan_Companies_Inc: Marsh & McLennan is a professional services company
+  that offers advice and solutions in the areas of risk, strategy, and human capital.
+Mechel_PJSC: Russia-based Mechel is one of the world's largest metal and mining companies
+  with operations in 11 Russian regions as well as abroad.
+Mechel_PAO: Mechel is a Russia-based company that operates in the mining, steel, and
+  power businesses in various markets throughout the world. The company also offers
+  transportation logistics services, and generates electricity and other power resources.
+MedMira_Inc: MedMira is a Canada-based biotechnology company that develops, manufactures,
+  and markets rapid diagnostic tests and instrumentation.
+Mid-America_Apartment_Communities_Inc: The company is a REIT that owns, develops,
+  and manages multi-family apartment buildings, Mid-America Apartment Communities
+  operates across the southeastern and midwestern portions of the U.S.
+MGM_Resorts_International: MGM is a holding company that, through its subsidiaries,
+  owns and operates casino resorts. The company's resorts offer gaming, hotel, convention,
+  dining, entertainment, retail, and other resort amenities.
+Molson_Coors_Beverage_Co: Molson Coors is a holding company that produces and sells
+  beer. Some of its brands include Coors Light, Miller Lite, and Molson Canadian.
+Momenta_Pharmaceuticals_Inc: Momenta Pharmaceuticals is a biotechnology company focused
+  on the discovery and development of novel biologic therapies for the treatment of
+  rare immune-mediated diseases.
+MSCI_Inc: MSCI is a finance company that offers services to customers including asset
+  managers, banks and wealth managers to help them make key financial decisions, including
+  trading securities and managing their portfolios. MSCI publishes a long list of
+  prominent indexes that track a broad range of securities.
+Netflix_Inc: Netflix is an Internet subscription services company that offers streaming
+  movies and television shows, and also distributes DVDs by mail. Netflix increasingly
+  is producing entertainment content.
+Neurocrine_Biosciences_Inc: Neurocrine Biosciences is a biotechnology company focused
+  on the development of treatments for anxiety, depression, Alzheimer's disease, multiple
+  sclerosis, and a variety of other neurological diseases and disorders.
+Newell_Brands_Inc: Newell Brands is a retailer of consumer products, including housewares,
+  home furnishings, office supplies, tools and hardware, and hair accessories. Some
+  of the company's brands include Sharpie, Paper Mate, Elmer's, Coleman, and Rubbermaid.
+Newmont_Corp: Newmont acquires and develops mineral properties. The company produces
+  primarily gold, but also silver, copper, zinc, and lead.
+NextEra_Energy_Inc: NextEra is an electric power and energy infrastructure company
+  that generates electricity through wind, solar, and natural gas. Through its subsidiaries,
+  the company also operates multiple commercial nuclear power units.
+Nordstrom_Inc: Nordstrom is a fashion retail store which provides apparel, footwear,
+  and accessories for women, men, and children. The company also offers a series of
+  private label credit and debit cards to customers.
+Norfolk_Southern_Corp: Norfolk Southern is a holding company that provides rail transportation
+  services. The company transports raw materials, intermediate products, and finished
+  goods primarily in the Southeast, East, and Midwest, and via interchange with rail
+  carriers, to and from the rest of the U.S.
+Northern_Oil_&_Gas_Inc: Northern Oil & Gas is an oil and gas exploration and production
+  company engaged in the acquisition, exploration, development, and production of
+  crude oil and natural gas properties.
+Northrop_Grumman_Corp: Northrop Grumman is a global security company that provides
+  services and security systems to clients in the aerospace, information systems,
+  and electronics industries, among others.
+NortonLifeLock_Inc: NortonLifeLock engages in the consumer cyber safety business,
+  offering solutions that enable consumers to protect their electronic devices, online
+  privacy, identity, and home networks.
+Norwegian_Cruise_Line_Holdings_Ltd: Norwegian Cruise Line operates a fleet of passenger
+  cruise ships. The company offers various itineraries and theme cruises.
+Novavax_Inc: Novavax is a clinical stage biotechnology company that creates vaccines
+  to address a wide range of infectious diseases using proprietary virus-like particle
+  (VLP) technology.
+NRG_Energy_Inc: NRG Energy is an integrated power company that produces, sells, and
+  distributes energy and energy services. The company provides energy production and
+  cogeneration facilities, thermal energy production, and energy resource facilities.
+Nucor_Corp: Nucor is a manufacturer of steel and steel products, including carbon
+  and alloy steel, steel joints, steel deck, and metal building systems.
+NVIDIA_Corp: NVIDIA engages in the design, development, and manufacture of computer
+  graphics processors, chipsets, and related multimedia software.
+Old_Dominion_Freight_Lines_Inc: Old Dominion Freight Lines is a motor carrier that
+  transports shipments of a variety of goods and commodities. The company serves regional
+  markets across the U.S.
+Omnicom_Group_Inc: Omnicom is an advertising, marketing, and corporate communications
+  services company. This company offers a variety of traditional advertising and public
+  relations services.
+ONEOK_Inc: ONEOK focuses exclusively on the gathering, processing, storage, and transportation
+  of natural gas in the United States.
+Otsuka_Holdings_Co_Ltd: Ostuka Holdings is a Japanese pharmaceutical conglomerate
+  that, in addition to pharmaceuticals, produces medical devices, nutritional supplements,
+  and a number of foods and beverages.
+Ovintiv_Inc: Ovintiv, formerly known as Encana, is an energy company previously headquartered
+  in Canada but now based in the U.S. The company has a portfolio of oil, natural-gas,
+  and natural-gas-liquids properties, and has operations in both the U.S. and Canada.
+PetroTal_Corp: PetroTal, formerly Sterling Resources Ltd., is a Canada-based oil and
+  gas company focused on the exploration, appraisal, development, and production of
+  oil and gas assets.
+Pinnacle_West_Capital_Corp: Pinnacle West Capital is a utility holding company that,
+  through its subsidiaries, engages in the generation, transmission, and distribution
+  of electricity.
+PolyOne_Corp: PolyOne creates polymer materials and services including color and additive
+  concentrates, screen printing inks, and rubber latex compounds.
+PPL_Corp: PPL is an energy and utility holding company that, through its subsidiaries,
+  engages in the generation, transmission, and distribution of electricity.
+Pretium_Resources_Inc: Pretium Resources is a Canada-based precious metals exploration
+  and development company primarily focused on gold deposits in Canada.
+Progressive_Corp: Progressive is an insurance holding company that provides various
+  personal, automotive, and special property-casualty insurance products through its
+  subsidiaries.
+Public_Service_Enterprise_Group_Inc: Public Service Enterprise Group is a gas and
+  electric utility company that provides services to customers in New Jersey.
+PulteGroup_Inc: PulteGroup is involved in the development and construction of residential
+  properties, as well as the purchase and development of residential land. Further,
+  the company offers mortgage financing, title insurance, and other services to home
+  buyers.
+QEP_Resources_Inc: QEP Resources is an independent crude oil and natural gas exploration
+  and production company.
+Regeneron_Pharmaceuticals_Inc: Regeneron Pharmaceuticals is a biopharmaceutical firm
+  that discovers, develops, and markets treatments for a variety of serious medical
+  conditions.
+Reliance_Steel_&_Aluminum_Co: Reliance Steel & Aluminum specializes in processing
+  and distributing steel and aluminum products to partners around the U.S.
+Relmada_Therapeutics_Inc: Relmada Therapeutics is a pharmaceutical company focused
+  on the research and development of chemical entities used for the treatment of pain,
+  as well as a line of established drugs for central nervous system diseases.
+Renewable_Energy_Group_Inc: Renewable Energy Group develops and distributes biofuels,
+  renewable chemicals, and related products. The company works with businesses across
+  the U.S.
+ResMed_Inc: ResMed focuses on the development and manufacturing of products used to
+  diagnose and treat sleep-disordered breathing.
+Rockwell_Automation_Inc: Rockwell Automation manufactures and assembles automation
+  and other digital products for architectural, electrical, automotive, semiconductor,
+  food and beverage, energy, and life sciences applications.
+Royal_Gold_Inc: Royal Gold engages in the acquisition and management of precious metals
+  royalties. The company seeks to acquire existing royalties or to finance projects
+  in exchange for royalty interests.
+S&P_Global_Inc: S&P Global provides financial information services. The company offers
+  ratings, benchmarks, analytics, and data in the global capital and commodity markets.
+SBA_Communications_Corp: SBA Communications owns and operates wireless communications
+  infrastructure. SBA Communications leases antenna space to various wireless service
+  providers.
+SciPlay_Corp: SciPlay designs and publishes video games for mobile and web platforms,
+  with titles including Jackpot Party Casino and Monopoly Slots.
+SeaChange_International_Inc: SeaChange International develops software related to
+  the management, storage, and distribution of digital video, particularly for telecommunications
+  companies and television operators.
+Seagate_Technology_PLC: Seagate Technology is engaged in the development, production,
+  and distribution of data-storage products and solutions. The company offers hard
+  disk drives, other storage products, and data-recovery services.
+Semafo_Inc: Semafo is a Canada-based gold miner that operates two gold mines in the
+  West African country of Burkina Faso.
+Sempra_Energy: Sempra is an energy services holding company that, through its subsidiaries,
+  generates electricity, delivers natural gas, operates natural gas pipelines and
+  storage facilities, and operates a wind power generation project.
+ServiceNow_Inc: ServiceNow provides enterprise cloud computing solutions. The company
+  offers cloud-based services that automate workflow within and between the separate
+  departments of an enterprise.
+Sherwin-Williams_Co: Sherwin-Williams develops, manufactures, and distributes paint,
+  coatings, and related products. The company sells its products to professional,
+  industrial, commercial, and retail customers.
+Sibanye-Stillwater: Sibanye-Stillwater is a South Africa-based metal mining services
+  company that develops and extracts mineral properties.
+Simon_Property_Group_Inc: Simon Property Group is a REIT that owns, develops, and
+  manages retail real estate properties throughout the world.
+SL_Green_Realty_Corp: SL Green Realty is a fully integrated and self-administered
+  REIT primarily focused on acquiring and managing commercial properties in Manhattan.
+Smith_Micro_Software_Inc: Smith Micro Software is a software company that specializes
+  in wireless solutions for mobile systems, including connectivity and data traffic.
+SolarEdge_Technologies_Inc: SolarEdge Technologies is an Israel-based solar energy
+  company that provides solar power optimization and photovoltaic monitoring solutions.
+  The company provides optimizers, inverters, monitoring equipment, tools, and accessories
+  for the purpose of power harvesting, conversion, and efficiency.
+Southern_Co: Southern is a public utility holding company that, through its subsidiaries,
+  generates electricity and sells it at the wholesale and retail level. The company
+  also offers wireless telecommunications services, two-way radio, telephone, paging,
+  and internet access services, and offers wholesale fibre optic solutions.
+Southwestern_Energy_Co: Southwestern Energy is an energy company that engages in natural
+  gas and oil exploration, development and production.
+Sprott_Inc: Sprott is a Canada-based alternative asset management company that provides
+  investment management services, including portfolio management, broker-dealer activities,
+  and consulting services to its clients, including those from the cannabis industry.
+Supernus_Pharmaceuticals_Inc: Supernus Pharmaceuticals develops and markets proprietary
+  drugs for the treatment of central nervous system diseases and disorders.
+Synchrony_Financial: Synchrony Financial is a consumer financial services company
+  offering a range of credit services, including private-label credit cards, small-and-medium-sized
+  business credit products, and installment loans. The company also offers various
+  deposit products insured by the Federal Deposit Insurance Corporation (FDIC)
+Sysco_Corp: Sysco markets and distributes a variety of food and related products primarily
+  to the food service or food-away-from-home industry. Some of those products include
+  a range of frozen foods, fresh produce, canned and dry foods, desserts, beverages,
+  and non-food items such as napkins, tableware, cookware, and cleaning supplies.
+Take-Two_Interactive_Software_Inc: Take-Two Interactive Software develops, produces,
+  and markets interactive software including video games and related accessories.
+  The company creates video games for consoles, handheld systems, personal computers,
+  smart phones, and tablets.
+Target_Corp: Target owns and operates general merchandise and food discount stores
+  as well as a fully integrated online business. The company offers a wide assortment
+  of general merchandise and food.
+Ternium_SA: Ternium is a Luxembourg-based company that manufactures and processes
+  steel slabs, billets and round bars, hot rolled flat products, merchant bars, reinforcing
+  bars, insulated panels, roofing and cladding, and decks.
+The_AES_Corp: ES is a power generation and utility company that, through its subsidiaries,
+  operates a diversified portfolio of electricity generation and distribution businesses.
+The_Estee_Lauder_Companies_Inc: Estee Lauder is engaged in the manufacture and marketing
+  of a wide range of skin care, makeup, fragrance, and hair care products.
+The_Hartford_Financial_Services_Group_Inc: Hartford Financial Services is a provider
+  of insurance and financial services to individual and business customers throughout
+  the world. The company offers property and casualty insurance, group benefits, and
+  mutual funds.
+The_Hershey_Co: Hershey engages in the manufacture of chocolate and sugar confectionery.
+  The company's primary products include chocolate and non-chocolate confectionery
+  products, gum and mint refreshment products, baking ingredients, and snack items,
+  such as spreads, meat snacks, bars, and snack bites.
+The_Kroger_Co: Kroger operates supermarkets, drug stores, multi-department stores,
+  jewellery stores, and convenience stores. The company also engages in the manufacture
+  and processing of some of the food it sells in its supermarkets.
+The_Medicines_Co: The Medicines Co. is a pharmaceutical company perhaps best known
+  for its product Angiomax, an anticoagulant commonly used throughout the world during
+  coronary angioplasty procedures.
+The_Valens_Co: The Valens Company, formerly Valens GroWorks Corp., is a Canada-based
+  cannabis company specializing in processing and formulation.
+The_Western_Union_Co: Global money transfer company Western Union offers primarily
+  consumer-to-consumer transfers, as well as money orders and bill paying services.
+Tiffany_&_Co: Tiffany & Co. is a designer, maker, and distributor of high-end jewelry
+  products. The company offers products designed for both men and women and to customers
+  around the world.
+Tilray_Inc: Tilray is a pharmaceutical company focused on the development of cannabis-based
+  medicines, drugs, drops, and oil products. The company is headquartered in Canada
+  but serves clients worldwide.
+T-Mobile_US_Inc: T-Mobile provides wireless communications services under the T-Mobile
+  and MetroPCS brands. The company offers prepaid wireless voice, messaging and data
+  services, and wholesale wireless services.
+Torex_Gold_Resources_Inc: Torex Gold Resources is a Canada-based gold mining company
+  engaged in the exploration and development of gold properties. The company has operations
+  in the Morelos Gold property located in southern Mexico.
+TRI_Pointe_Group_Inc: TRI Pointe Group is a homebuilding company that designs, builds,
+  and sells single family residential homes.
+Trillium_Therapeutics_Inc: Canadian biotechnology firm Trillium Therapeutics is a
+  clinical-stage immuno-oncology company. It has preclinical programs and therapies
+  that focus on treating cancer.
+Trinity_Industries_Inc: Trinity Industries provides rail transportation products and
+  services. The company also provides products and services to the energy, chemical,
+  agriculture, transportation, and construction sectors.
+Trulieve_Cannabis_Corp: Trulieve Cannabis is a Canada-based holding company that,
+  through its subsidiaries, engages in the cultivation, possession, sale, and distribution
+  of medical cannabis.
+Tsakos_Energy_Navigation_Ltd: Tsakos Energy Navigation is a Greece-based provider
+  of seaborne crude oil and petroleum product transportation services. The company
+  operates crude tankers, product tankers, and liquefied natural gas carriers.
+Tyson_Foods_Inc: Tyson Foods produces, distributes, and markets chicken, beef, pork,
+  and prepared foods. Some of its brands include Hillshire Farm, Sara Lee, and State
+  Fair.
+United_Airlines_Holdings_Inc: United Airlines provides air transportation services
+  around the world for passengers and cargo.
+United_Breweries_Co_Inc: United Breweries, also known as Compania Cervecerias Unidas,
+  is a Chile-based producer and distributor of a wide range of branded beers. The
+  company also produces wines, spirits, and non-alcoholic beverages such as soft drinks,
+  bottled water, and juices.
+United_States_Steel_Corp: Integrated steel producer United States Steel is involved
+  in multiple stages of the steel production process and serves customers in industries
+  ranging from automotive to industrial machinery.
+Unum_Group: Unum provides disability insurance, group life insurance, and payroll-deducted
+  voluntary benefits for employees primarily at U.S. corporations.
+Valero_Energy_Corp: Valero Energy is a petroleum-refining and ethanol-producing company
+  with operations in the U.S., Canada, and Aruba. The company produces conventional
+  gasolines, distillates, jet fuel, asphalt, petrochemicals, lubricants, diesel fuel,
+  and other refined products.
+Vanda_Pharmaceuticals_Inc.: Vanda Pharmaceuticals develops and markets a series of
+  clinical-stage drug treatments targeting central nervous system disorders.
+Ventas_Inc: Ventas operates as a REIT that owns seniors housing communities, skilled
+  nursing facilities, hospitals, and medical office buildings in both the U.S. and
+  Canada.
+Verizon_Communications_Inc: Verizon is a telecom conglomerate operating cable television,
+  landline, internet, and cellular phone service.
+Vertex_Pharmaceuticals_Inc: Vertex Pharmaceuticals discovers, develops, and manufactures
+  drugs used in the treatment of conditions including cancer, autoimmune disease,
+  and neurological disorders.
+ViacomCBS_Inc: ViacomCBS is a global multimedia company focused on creating premium
+  content and experiences for audiences across the world. The company provides cable
+  networks, content production and distribution, television stations, and digital
+  streaming services. It also operates other internet-based businesses as well as
+  consumer publishing.
+Village_Farms_International_Inc: Village Farms International is a Canada-based agricultural
+  producer. In addition to growing standard vegetables like tomatoes, bell peppers,
+  and cucumbers, the company now also produces cannabis.
+Virtus_Investment_Partners_Inc: Virtus Investment Partners manages portfolios and
+  investments for individuals and institutional clients, focusing on public equities,
+  fixed income, and the real estate market.
+Vornado_Realty_Trust: Vornado Realty Trust is a real estate investment trust (REIT)
+  that owns office, retail, merchandise mart properties, and other real estate and
+  related investments.
+Walmart_Inc: Walmart operates retail and wholesale businesses. The company offers
+  a broad assortment of merchandise including apparel, house wares, small appliances,
+  electronics, books, home improvement, jewellery, games, pharmaceutical products,
+  household essentials, and automotive tools.
+WEC_Energy_Group_Inc: WEC Energy Group is a holding company that provides electricity
+  and natural gas to individual consumers and businesses. The company manages electric
+  and natural gas distribution and transmission lines, as well as power plants.
+Westinghouse_Air_Brake_Technologies_Corp: Westinghouse Air Brake Technologies provides
+  technology-based equipment and services for the global freight and transit rail
+  industries.
+West_Japan_Railway_Co: West Japan Railway is a Japan-based provider of passenger railway
+  transport services. The company also operates department stores, convenience stores,
+  restaurants, and shopping centers. It also engages in the sale and leasing of real
+  estate, rental of automobiles and equipment, and other activities.
+Williams_Companies_Inc: Energy infrastructure enterprise Williams Companies is a midstream
+  company operating natural gas pipelines across North America.
+Worthington_Industries_Inc: Worthington Industries is a diversified metals company
+  that manufactures equipment for heavy machinery, ceiling grid materials, and more.
+XBiotech_Inc: XBiotech is a biopharmaceutical company that discovers, develops, and
+  commercializes monoclonal antibodies for treating a variety of diseases, including
+  cancer, vascular disease, inflammatory skin disease, and diabetes.
+Xerox_Holdings_Corp: Xerox offers digital print technology and related solutions.
+  The company's capabilities include imaging and printing, data analytics, as well
+  as the development of secure and automated solutions to improve productivity.
+Zoetis_Inc: Zoetis discovers, develops, and manufactures animal health medicines and
+  vaccines, with a focus on livestock and companion animals.
+Zynga_Inc: Zynga designs and develops video games with a particular focus on creating
+  online social games for mobile platforms and social networking sites. Popular titles
+  include FarmVille and Words With Friends.
+Noble_Midstream_Partners_LP: Noble Midstream Partners is a master limited partnership
+  (MLP) created by Noble Energy (NBL) to own and operate its oil storage and refining
+  infrastructure.
+Seven_Generations_Energy_Ltd: Seven Generations is a natural gas producer based in
+  Canada.
+Clean_Energy_Fuels_Corp: Clean Energy Fuels Corp is a producer of renewable natural
+  gas. That means they create natural gas from decomposing organic waste, rather than
+  extracting it from underground deposits.
+Sasol_Ltd: Sasol is a South African energy and chemical conglomerate. It is an integrated
+  oil and gas company as well as a chemical producer.
+Advantage_Oil_&_Gas_Ltd: Advantage is a Canadian oil and natural gas producer, with
+  a focus on natural gas.

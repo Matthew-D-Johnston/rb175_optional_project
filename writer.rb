@@ -74,16 +74,24 @@ end
 def stock_data(file, rank)
   workbook = load_xlsx_file(file)
   stock_data = workbook.row(rank)
+  
   stock_hash = {}
-  stock_hash[:ticker] = stock_data[0]
+  stk_name = stock_data[1]
+  
   if stock_data[1] =~ /(Inc|Corp|Co|Ltd)$/
-    stock_hash[:name] = stock_data[1] + '.'
+    stock_hash[:name] = stk_name + '.'
   else
-    stock_hash[:name] = stock_data[1]
+    stock_hash[:name] = stk_name
   end
+  stock_hash[:ticker] = stock_data[0]
   stock_hash[:price] = '%.2f' % stock_data[2]
   stock_hash[:market_cap] = stock_data[3].to_f.round(1)
-  stock_hash[:special] = stock_data[4].to_f.round(1)
+  case file
+  when "value.xlsx" then stock_hash[:ratio] = stock_data[4].to_f.round(1)
+  when "growth.xlsx" then stock_hash[:growth] = (stock_data[4].to_f * 100).round(1)
+  when "momentum.xlsx" then stock_hash[:return] = (stock_data[4].to_f * 100).round(1)
+  end
+  stock_hash[:description] = load_company_descriptions[stk_name.gsub(" ", "_")]
   stock_hash
 end
 
@@ -102,6 +110,30 @@ def unique_tickers(value, growth, momentum)
   tickers.uniq
 end
 
+def change_duplicate_stock_description(value, growth, momentum)
+  tickers = []
+
+  value.each do |_, data|
+    tickers << data[:ticker]
+  end
+
+  growth.each do |_, data|
+    if tickers.include?(data[:ticker])
+      data[:description] = "See above for company description."
+    else
+      tickers << data[:ticker]
+    end
+  end
+
+  momentum.each do |_, data|
+    if tickers.include?(data[:ticker])
+      data[:description] = "See above for company description."
+    else
+      tickers << data[:ticker]
+    end
+  end
+end
+
 get "/" do
   erb :home
 end
@@ -111,10 +143,12 @@ get "/stocks" do
 end
 
 get "/stock_story" do
-  @value_stocks = group_stock_data("value.xlsx")
-  @growth_stocks = group_stock_data("growth.xlsx")
-  @momentum_stocks = group_stock_data("momentum.xlsx")
-  @tickers = unique_tickers(@value_stocks, @growth_stocks, @momentum_stocks)
+  @value = group_stock_data("value.xlsx")
+  @growth = group_stock_data("growth.xlsx")
+  @momentum = group_stock_data("momentum.xlsx")
+  @tickers = unique_tickers(@value, @growth, @momentum)
+
+  change_duplicate_stock_description(@value, @growth, @momentum)
 
   erb :stock_story
 end
@@ -145,4 +179,3 @@ post "/update" do
   session[:message] = "Database has been updated with a description for #{params[:name]}"
   redirect "/update"
 end
-

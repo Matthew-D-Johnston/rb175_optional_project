@@ -3,21 +3,17 @@
   <ul>
     <li><b>HEADING:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
     <li><b>SUBHEADING:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
-    <li><b>SOCIAL TITLE:</b></li>
+    <li><b>SOCIAL TITLE:</b> <%= @value[:stock_1][:ticker] %>, <%= @growth[:stock_1][:ticker] %>, and <%= @momentum[:stock_1][:ticker] %> are top for value, growth, and momentum, respectively</li> 
     <li><b>META TITLE:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
     <li><b>META DESCRIPTION:</b> These are the <%= session[:type].downcase %> stocks with the best value, fastest growth, and most momentum for <%= session[:period] %>.</li>
   </ul>
 </div>
-
 <div class="tickers">
   <h2>Tickers</h2>
-  <ul>
     <% @tickers.each do |ticker| %>
-    <li><%= ticker %></li>
+    <p><%= ticker %></p>
     <% end %>
-  </ul>
 </div>
-
 <div class="intro">
   <h2>Intro</h2>
   <p>
@@ -31,81 +27,80 @@
     <% end %>
   </p>
 </div>
-
 <div class="value">
   <h2>Best Value <%= session[:type] %> Stocks</h2>
   <div class="value_intro">
     <p>
       <% if session[:earn_or_sales] == "E" %>
-        These are the <%= session[:type].downcase %> stocks with the lowest 12-month trailing price-to-earnings (P/E) ratio. Because profits can be returned to shareholders in the form of dividends and buybacks, a low P/E ratio shows you’re paying less for each dollar of profit generated.
+        These are the <%= session[:type].downcase %> stocks with the lowest 12-month trailing <a href="https://www.investopedia.com/terms/p/price-earningsratio.asp">price-to-earnings (P/E)</a> ratio. Because profits can be returned to shareholders in the form of dividends and buybacks, a low P/E ratio shows you’re paying less for each dollar of profit generated.
       <% else %>
-        These are the <%= session[:type].downcase %> stocks with the lowest 12-month trailing price-to-sales (P/S) ratio. For young companies that have not reached profitability, this can provide an idea of how much business you’re getting for each dollar invested.
+        These are the <%= session[:type].downcase %> stocks with the lowest 12-month trailing <a href="https://www.investopedia.com/terms/p/price-to-salesratio.asp">price-to-sales (P/S)</a> ratio. For young companies that have not reached profitability, this can provide an idea of how much business you’re getting for each dollar invested.
       <% end %>
     </p>
   </div>
   <div class="table">
+    <p>Best Value <%= session[:type] %> Stocks</p>
     <% if session[:earn_or_sales] == "E" %>
-      <p> Price    Market Cap ($...)    12-Month Trailing P/E Ratio</p>
+      <p> Price ($)   Market Cap ($...)    12-Month Trailing P/E Ratio</p>
     <% else %>
-      <p> Price    Market Cap ($...)    12-Month Trailing P/S Ratio</p>
+      <p> Price ($)   Market Cap ($...)    12-Month Trailing P/S Ratio</p>
     <% end %>
-    <% @value_stocks.each do |_, data| %>
+    <% @value.each do |_, data| %>
       <p>
         <%= data[:name] %>
-        (<%= data[:ticker] %>)
+        (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= data[:ticker] %>"><%= data[:ticker] %></a>)
         <%= data[:price] %>
         <%= data[:market_cap] %>
-        <%= data[:special] %>
+        <%= data[:ratio] %>
       </p>
     <% end %>
-    <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
+    <p>Source: <a href="https://ycharts.com/">YCharts</a></p>
   </div>
   <div class="bullets">
     <ul>
-      <li><b>Company 1:</b></li>
-      <li><b>Company 2:</b></li>
-      <li><b>Company 3:</b></li>
+      <% @value.each do |_, data| %>
+        <li><b><%= data[:name] %>:</b> <%= data[:description] %></li>
+      <% end %>
     </ul>
   </div>
 </div>
-
 <div class="growth">
   <h2>Fastest Growing <%= session[:type] %> Stocks</h2>
   <div class="growth_intro">
     <p>
       <% if session[:earn_or_sales] == "E" %>
-        These are the <%= session[:type].downcase %> stocks with the highest year-over-year (YOY) earnings per share (EPS) growth for the most recent quarter. Rising earnings show that a company’s business is growing and is generating more money that it can reinvest or return to shareholders.
+        These are the <%= session[:type].downcase %> stocks with the highest year-over-year (YOY) <a href="https://www.investopedia.com/terms/e/eps.asp">earnings per share (EPS)</a> growth for the most recent quarter. Rising earnings show that a company’s business is growing and is generating more money that it can reinvest or return to shareholders.
       <% else %>
         These are the <%= session[:type].downcase %> stocks with the highest year over year (YOY) sales growth for the most recent quarter. Rising sales show that a company’s business is growing. This is often used to measure growth of young companies that have not yet reached profitability.
       <% end %>
     </p>
   </div>
   <div class="table">
+    <p>Fastest Growing <%= session[:type] %> Stocks</p>
     <% if session[:earn_or_sales] == "E" %>
-      <p> Price    Market Cap ($...)    EPS Growth(%)</p>
+      <p> Price ($)   Market Cap ($...)    EPS Growth (%)</p>
     <% else %>
-      <p> Price    Market Cap ($...)    Revenue Growth(%)</p>
+      <p> Price ($)   Market Cap ($...)    Revenue Growth (%)</p>
     <% end %>
-    <% @growth_stocks.each do |_, data| %>
+    <% @growth.each do |_, data| %>
       <p>
         <%= data[:name] %>
-        (<%= data[:ticker] %>)
+        (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= data[:ticker] %>"><%= data[:ticker] %></a>)
         <%= data[:price] %>
         <%= data[:market_cap] %>
-        <%= data[:special] %>
+        <%= data[:growth] %>
       </p>
     <% end %>
-    <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
+    <p>Source: <a href="https://ycharts.com/">YCharts</a></p>
   </div>
   <div class="bullets">
     <ul>
-      <li><b>Company 1:</b></li>
-      <li><b>Company 2:</b></li>
-      <li><b>Company 3:</b></li>
+      <% @growth.each do |_, data| %>
+        <li><b><%= data[:name] %>:</b> <%= data[:description] %></li>
+      <% end %>
     </ul>
   </div>
 </div>
-
 <div class="momentum">
   <h2><%= session[:type] %> Stocks with the Most Momentum</h2>
   <div class="momentum_intro">
@@ -114,26 +109,26 @@
     </p>
   </div>
   <div class="table">
-    <p> Price    Market Cap ($...)   12-Month Trailing Total Return (%)</p>
-    <% @momentum_stocks.each do |_, data| %>
+    <p><%= session[:type] %> Stocks with the Most Momentum</p>
+    <p> Price ($)    Market Cap ($...)   12-Month Trailing Total Return (%)</p>
+    <% @momentum.each do |_, data| %>
       <p>
         <%= data[:name] %>
-        (<%= data[:ticker] %>)
+        (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= data[:ticker] %>"><%= data[:ticker] %></a>)
         <%= data[:price] %>
         <%= data[:market_cap] %>
-        <%= data[:special] %>
+        <%= data[:momentum] %>
       </p>
     <% end %>
     <p>S&P 500 N/A N/A <%= session[:sp500_return].gsub("%", "") %></p>
     <p><%= session[:sector_index] %> N/A N/A <%= session[:index_return].gsub("%", "") %></p>
-    <p><em>Source: <a href="https://ycharts.com/">YCharts</a></em></p>
+    <p>Source: <a href="https://ycharts.com/">YCharts</a></p>
   </div>
   <div class="bullets">
     <ul>
-      <li><b>Company 1:</b></li>
-      <li><b>Company 2:</b></li>
-      <li><b>Company 3:</b></li>
+      <% @momentum.each do |_, data| %>
+        <li><b><%= data[:name] %>:</b> <%= data[:description] %></li>
+      <% end %>
     </ul>
   </div>
 </div>
-

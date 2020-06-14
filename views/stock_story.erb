@@ -117,7 +117,7 @@
         (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= data[:ticker] %>"><%= data[:ticker] %></a>)
         <%= data[:price] %>
         <%= data[:market_cap] %>
-        <%= data[:momentum] %>
+        <%= data[:return] %>
       </p>
     <% end %>
     <p>S&P 500 N/A N/A <%= session[:sp500_return].gsub("%", "") %></p>

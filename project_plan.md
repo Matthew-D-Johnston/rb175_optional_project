@@ -886,4 +886,207 @@ Steps:
   end
   ```
 
+---
+
+### Best ETFs Stories
+
+#### Implement ETF Data Submission Page
+
+* Create a `get "/etfs"` route that the "Best ETFs" button on the home page will render when pushed.
+
+  ```ruby
+  get "/etfs" do
+    erb :etfs
+  end
+  ```
+
+* Create an `etfs.erb` view template that will render the ETF Data submission page.
+
+  ```erb
+  <h2>Best ETFs</h2>
+  <form method="post" action="/stocks">
+    <div>
+      <label for="etf_1"> ETF 1:
+        <input name="etf_1" id="etf_1" />
+      </label>
+    </div>
+    <div>
+      <label for="etf_2"> ETF 2:
+        <input name="etf_2" id="etf_2" />
+      </label>
+    </div>
+    <div>
+      <label for="etf_3"> ETF 3:
+        <input name="etf_3" id="etf_3" />
+      </label>
+    </div>
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+  <p>Or, update the ETF Company Description database.</p>
+  <form class="inline" method="get" action="/etf_update">
+    <button type="submit">Update Database</button>
+  </form>
+  ```
+
+#### Retrieve the Data from `etfdb.com`
+
+* Create methods in the `writer.rb` file that wil retrieve the data for the etfs.
+
+  ```ruby
+  # ...
+  
+  require "nokogiri"
+  require "open-uri"
+  
+  # ...
+  
+  def extract_etf_html_data(ticker, type)
+    url = etf_data_urls(ticker)[type]
+    doc = Nokogiri::HTML(open(url))
+  end
+  
+  def etf_profile_data(ticker)
+    doc = extract_etf_html_data(ticker, :profile)
+    data_array = doc.css('div.mm-main-container').css('div.col-sm-6').css('li').text.split("\n")
+    data_array.delete("")
+    profile_data = {}
+  
+    data_array.each_with_index do |elem, idx|
+      case elem
+      when "Issuer" then profile_data[:issuer] = data_array[idx + 1]
+      when "Expense Ratio" then profile_data[:exp_ratio] = data_array[idx + 1]
+      when "Inception" then profile_data[:date] = data_array[idx + 1]
+      when "AUM" then profile_data[:aum] = data_array[idx + 1]
+      when "3 Month Avg. Volume" then profile_data[:volume] = data_array[idx + 1]
+      end
+    end
+  
+    profile_data
+  end
+  
+  def etf_dividend_data(ticker)
+    doc = extract_etf_html_data(ticker, :dividend)
+    data_array = doc.css('div.row.relative-metric-m-top').text.split("\n")
+    data_array.delete("")
+    dividend_data = {}
+  
+    data_array.each_with_index do |elem, idx|
+      dividend_data[:div_yield] = data_array[idx + 1] if elem == "Annual Dividend Yield"
+    end
+  
+    dividend_data
+  end
+  
+  def etf_performance_data(ticker)
+    doc = extract_etf_html_data(ticker, :performance)
+    data_array = doc.css('div.col-xs-6.col-md-3.col-lg-3').text.split("\n")
+    data_array.delete("")
+    performance_data = {}
+  
+    data_array.each_with_index do |elem, idx|
+      if elem == "1 Year Return"
+        yr_return = data_array[idx - 1].to_f.round(1)
+        performance_data[:one_yr_return] = "#{yr_return}%"
+      end
+    end
+  
+    performance_data
+  end
+  
+  def etf_holdings_data(ticker)
+    doc = extract_etf_html_data(ticker, :holdings)
+  
+    holdings = []
+    8.upto(10) do |num|
+      holding = doc.css("tr")[num].text.split("\n")
+      holding.delete("")
+      holding_elements = holding[0].split
+      holding_elements.pop
+      ticker = holding_elements.shift
+      company = holding_elements.join(" ")
+      holdings << { ticker => company }
+    end
+  
+    holdings_data = { etf_holdings: holdings }
+  end
+  
+  def combined_etf_data(ticker)
+    h1 = etf_profile_data(ticker)
+    h2 = etf_dividend_data(ticker)
+    h3 = etf_performance_data(ticker)
+    h4 = etf_holdings_data(ticker)
+  
+    h1.merge(h2).merge(h3).merge(h4)
+  end
+  ```
+
+* Update `writer.rb` to include new routes.
+
+  ```ruby
+  # ...
+  
+  get "/etf_story" do
+    erb :etf_story
+  end
+  
+  # ...
+  
+  post "/etfs" do
+    ticker_1 = params[:etf_1]
+    ticker_2 = params[:etf_2]
+    ticker_3 = params[:etf_3]
+  
+    session[:etf_1] = combined_etf_data(ticker_1)
+    session[:etf_2] = combined_etf_data(ticker_2)
+    session[:etf_3] = combined_etf_data(ticker_3)
+  
+    redirect "/etf_story"
+  end
+  ```
+
+* Create an `etf_story.erb` view template.
+
+  ```erb
+  <div class="intro">
+  </div>
+  
+  <div class="etf_1">
+    <ul>
+      <li>Performance over 1-Year: <%= session[:etf_1][:one_yr_return] %></li>
+      <li>Expense Ratio: <%= session[:etf_1][:exp_ratio] %></li>
+      <li>Annual Dividend Yield: <%= session[:etf_1][:div_yield]%></li>
+      <li>3-Month Average Daily Volume: <%= session[:etf_1][:volume]%></li>
+      <li>Assets Under Management: <%= session[:etf_1][:aum] %></li>
+      <li>Inception Date: <%= session[:etf_1][:date] %></li>
+      <li>Issuer: <%= session[:etf_1][:issuer] %></li>
+    </ul>
+  </div>
+  
+  <div class="etf_2">
+    <ul>
+      <li>Performance over 1-Year: <%= session[:etf_2][:one_yr_return] %></li>
+      <li>Expense Ratio: <%= session[:etf_2][:exp_ratio] %></li>
+      <li>Annual Dividend Yield: <%= session[:etf_2][:div_yield]%></li>
+      <li>3-Month Average Daily Volume: <%= session[:etf_2][:volume]%></li>
+      <li>Assets Under Management: <%= session[:etf_2][:aum] %></li>
+      <li>Inception Date: <%= session[:etf_2][:date] %></li>
+      <li>Issuer: <%= session[:etf_2][:issuer] %></li>
+    </ul>
+  </div>
+  
+  <div class="etf_3">
+    <ul>
+      <li>Performance over 1-Year: <%= session[:etf_3][:one_yr_return] %></li>
+      <li>Expense Ratio: <%= session[:etf_3][:exp_ratio] %></li>
+      <li>Annual Dividend Yield: <%= session[:etf_3][:div_yield]%></li>
+      <li>3-Month Average Daily Volume: <%= session[:etf_3][:volume]%></li>
+      <li>Assets Under Management: <%= session[:etf_3][:aum] %></li>
+      <li>Inception Date: <%= session[:etf_3][:date] %></li>
+      <li>Issuer: <%= session[:etf_3][:issuer] %></li>
+    </ul>
+  </div>
+  ```
+
   

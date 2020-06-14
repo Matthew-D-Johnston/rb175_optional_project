@@ -3,6 +3,8 @@ require "sinatra/reloader"
 require "tilt/erubis"
 require "yaml"
 require "roo"
+require "nokogiri"
+require "open-uri"
 
 configure do
   enable :sessions
@@ -134,6 +136,93 @@ def change_duplicate_stock_description(value, growth, momentum)
   end
 end
 
+def etf_data_urls(ticker)
+  { profile: "https://etfdb.com/etf/#{ticker}/#etf-ticker-profile",
+    dividend: "https://etfdb.com/etf/#{ticker}/#etf-ticker-valuation-dividend",
+    performance: "https://etfdb.com/etf/#{ticker}/#performance",
+    holdings: "https://etfdb.com/etf/#{ticker}/#holdings"
+  }
+end
+
+def extract_etf_html_data(ticker, type)
+  url = etf_data_urls(ticker)[type]
+  doc = Nokogiri::HTML(open(url))
+end
+
+def etf_profile_data(ticker)
+  doc = extract_etf_html_data(ticker, :profile)
+  data_array = doc.css('div.mm-main-container').css('div.col-sm-6').css('li').text.split("\n")
+  data_array.delete("")
+  profile_data = {}
+
+  data_array.each_with_index do |elem, idx|
+    case elem
+    when "Issuer" then profile_data[:issuer] = data_array[idx + 1]
+    when "Expense Ratio" then profile_data[:exp_ratio] = data_array[idx + 1]
+    when "Inception" then profile_data[:date] = data_array[idx + 1]
+    when "AUM" then profile_data[:aum] = data_array[idx + 1]
+    when "3 Month Avg. Volume" then profile_data[:volume] = data_array[idx + 1]
+    end
+  end
+
+  profile_data
+end
+
+def etf_dividend_data(ticker)
+  doc = extract_etf_html_data(ticker, :dividend)
+  data_array = doc.css('div.row.relative-metric-m-top').text.split("\n")
+  data_array.delete("")
+  dividend_data = {}
+
+  data_array.each_with_index do |elem, idx|
+    dividend_data[:div_yield] = data_array[idx + 1] if elem == "Annual Dividend Yield"
+  end
+
+  dividend_data
+end
+
+def etf_performance_data(ticker)
+  doc = extract_etf_html_data(ticker, :performance)
+  data_array = doc.css('div.col-xs-6.col-md-3.col-lg-3').text.split("\n")
+  data_array.delete("")
+  performance_data = {}
+
+  data_array.each_with_index do |elem, idx|
+    if elem == "1 Year Return"
+      yr_return = data_array[idx - 1].to_f.round(1)
+      performance_data[:one_yr_return] = "#{yr_return}%"
+    end
+  end
+
+  performance_data
+end
+
+def etf_holdings_data(ticker)
+  doc = extract_etf_html_data(ticker, :holdings)
+
+  holdings = []
+  8.upto(10) do |num|
+    holding = doc.css("tr")[num].text.split("\n")
+    holding.delete("")
+    holding_elements = holding[0].split
+    holding_elements.pop
+    ticker = holding_elements.shift
+    company = holding_elements.join(" ")
+    holdings << { ticker => company }
+  end
+
+  holdings_data = { etf_holdings: holdings }
+end
+
+def combined_etf_data(ticker)
+  h1 = etf_profile_data(ticker)
+  h2 = etf_dividend_data(ticker)
+  h3 = etf_performance_data(ticker)
+  h4 = etf_holdings_data(ticker)
+
+  h1.merge(h2).merge(h3).merge(h4)
+end
+
 get "/" do
   erb :home
 end
@@ -157,6 +246,14 @@ get "/update" do
   erb :update
 end
 
+get "/etfs" do
+  erb :etfs
+end
+
+get "/etf_story" do
+  erb :etf_story
+end
+
 post "/stocks" do
   session[:type] = params[:type]
   session[:period] = params[:period]
@@ -178,4 +275,16 @@ post "/update" do
 
   session[:message] = "Database has been updated with a description for #{params[:name]}"
   redirect "/update"
+end
+
+post "/etfs" do
+  ticker_1 = params[:etf_1]
+  ticker_2 = params[:etf_2]
+  ticker_3 = params[:etf_3]
+
+  session[:etf_1] = combined_etf_data(ticker_1)
+  session[:etf_2] = combined_etf_data(ticker_2)
+  session[:etf_3] = combined_etf_data(ticker_3)
+
+  redirect "/etf_story"
 end

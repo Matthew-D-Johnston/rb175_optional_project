@@ -36,6 +36,7 @@ PLATFORMS
 DEPENDENCIES
   erubis
   minitest
+  nokogiri
   rack-test
   roo
   sinatra (~> 1.4.7)

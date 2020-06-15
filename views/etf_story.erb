@@ -1,8 +1,20 @@
+<div class="headings">
+  <h2>Headings</h2>
+  <p><b>HEADING:</b> Best <%= session[:type] %> ETFs for <%= session[:period] %></p>
+  <p><b>SUBHEADING:</b> <%= session[:etf_1][:ticker] %>, <%= session[:etf_2][:ticker] %>, and <%= session[:etf_3][:ticker] %> were the best <%= session[:type].downcase %> ETFs for <%= session[:period] %></p>
+  <p><b>SOCIAL TITLE:</b> Best <%= session[:type] %> ETFs for <%= session[:period] %></p>
+  <p><b>META TITLE:</b>Best <%= session[:type] %> ETFs for <%= session[:period] %></p>
+  <p><b>META DESCRIPTION:</b> The best <%= session[:type].downcase %> ETFs for <%= session[:period] %> are <%= session[:etf_1][:ticker] %>, <%= session[:etf_2][:ticker] %>, and <%= session[:etf_3][:ticker] %>.</p>
+</div>
 <div class="intro">
+  <h2>Intro</h2>
+  <p>
+    The <%= session[:type].downcase %> ETF universe is comprised of about <%= session[:num_etfs] %> distinct ETFs, excluding inverse and leveraged ETFs. The best-performing <%= session[:type].downcase %> ETFs for <%= session[:period] %>, based on performance over the past year, is the <%= session[:etf_1][:name] %> (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= session[:etf_1][:ticker] %>"><%= session[:etf_1][:ticker] %></a>). We examine the top 3 best <%= session[:type].downcase %> ETFs below. All numbers in this story are as of <%= date[:month] %> <%= date[:day] %>, <%= date[:year] %>.
+  </p>
 </div>
 
 <div class="etf_1">
-  <h2><%= session[:etf_1][:name] %> (<%= session[:etf_1][:ticker] %>)</h2>
+  <h2><%= session[:etf_1][:name] %> (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= session[:etf_1][:ticker] %>"><%= session[:etf_1][:ticker] %></a>)</h2>
   <ul>
     <li>Performance over 1-Year: <%= session[:etf_1][:one_yr_return] %></li>
     <li>Expense Ratio: <%= session[:etf_1][:exp_ratio] %></li>
@@ -13,10 +25,11 @@
     <li>Issuer: <%= session[:etf_1][:issuer] %></li>
   </ul>
   <p><%= etf_holdings_sentence(:etf_1) %></p>
+  <p>ETFdb.com. "<a href="https://etfdb.com/etf/<%= session[:etf_1][:ticker] %>/#etf-ticker-profile"><%= session[:etf_1][:name] %></a>," Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.</p>
 </div>
 
 <div class="etf_2">
-  <h2><%= session[:etf_2][:name] %> (<%= session[:etf_2][:ticker] %>)</h2>
+  <h2><%= session[:etf_2][:name] %> (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= session[:etf_2][:ticker] %>"><%= session[:etf_2][:ticker] %></a>)</h2>
   <ul>
     <li>Performance over 1-Year: <%= session[:etf_2][:one_yr_return] %></li>
     <li>Expense Ratio: <%= session[:etf_2][:exp_ratio] %></li>
@@ -27,10 +40,11 @@
     <li>Issuer: <%= session[:etf_2][:issuer] %></li>
   </ul>
   <p><%= etf_holdings_sentence(:etf_2) %></p>
+  <p>ETFdb.com. "<a href="https://etfdb.com/etf/<%= session[:etf_2][:ticker] %>/#etf-ticker-profile"><%= session[:etf_2][:name] %></a>," Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.</p>
 </div>
 
 <div class="etf_3">
-  <h2><%= session[:etf_3][:name] %> (<%= session[:etf_3][:ticker] %>)</h2>
+  <h2><%= session[:etf_3][:name] %> (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= session[:etf_3][:ticker] %>"><%= session[:etf_3][:ticker] %></a>)</h2>
   <ul>
     <li>Performance over 1-Year: <%= session[:etf_3][:one_yr_return] %></li>
     <li>Expense Ratio: <%= session[:etf_3][:exp_ratio] %></li>
@@ -41,4 +55,5 @@
     <li>Issuer: <%= session[:etf_3][:issuer] %></li>
   </ul>
   <p><%= etf_holdings_sentence(:etf_3) %></p>
+  <p>ETFdb.com. "<a href="https://etfdb.com/etf/<%= session[:etf_3][:ticker] %>/#etf-ticker-profile"><%= session[:etf_3][:name] %></a>," Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.</p>
 </div>

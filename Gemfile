@@ -11,5 +11,3 @@ gem "rack-test"
 gem "roo"
 
 gem "nokogiri"
-#gem "open-uri"
-

@@ -11,3 +11,7 @@ gem "rack-test"
 gem "roo"
 
 gem "nokogiri"
+
+group :production do
+  gem "puma"
+end

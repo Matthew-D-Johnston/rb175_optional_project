@@ -1,2 +1,2 @@
-require "./rb175_optional_project"
+require "./writer"
 run Sinatra::Application

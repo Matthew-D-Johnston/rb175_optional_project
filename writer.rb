@@ -39,6 +39,27 @@ helpers do
     year = date.year
     { day: "#{day}", month: "#{month}", year: "#{year}" }
   end
+
+  def etf_holdings_sentence(etf)
+    holding_1 = session[etf][:etf_holdings][0]
+    holding_2 = session[etf][:etf_holdings][1]
+    holding_3 = session[etf][:etf_holdings][2]
+
+    holdings_phrase = []
+
+    [holding_1, holding_2, holding_3].each do |holding|
+      company = ""
+      if holding[0] =~ /(Inc|Corp|Co|Ltd)$/
+        company = "#{holding[0]}."
+      else
+        company = holding[0]
+      end
+      ticker = holding[1]
+      holdings_phrase << "#{company} (#{ticker})"
+    end
+
+    "The fund's top three holdings include #{holdings_phrase[0]}, a ...; #{holdings_phrase[1]}, a ...; and #{holdings_phrase[2]}, a ."
+  end
 end
 
 def data_path
@@ -136,6 +157,25 @@ def change_duplicate_stock_description(value, growth, momentum)
   end
 end
 
+def month_name_long_form(month)
+  long_form = ""
+  case month
+  when "Jan" then long_form = "January"
+  when "Feb" then long_form = "February"
+  when "Mar" then long_form = "March"
+  when "Apr" then long_form = "April"
+  when "May" then long_form = "May"
+  when "Jun" then long_form = "June"
+  when "Jul" then long_form = "July"
+  when "Aug" then long_form = "August"
+  when "Sep" then long_form = "September"
+  when "Oct" then long_form = "October"
+  when "Nov" then long_form = "November"
+  when "Dec" then long_form = "December"
+  end
+  long_form
+end
+
 def etf_data_urls(ticker)
   { profile: "https://etfdb.com/etf/#{ticker}/#etf-ticker-profile",
     dividend: "https://etfdb.com/etf/#{ticker}/#etf-ticker-valuation-dividend",
@@ -151,17 +191,34 @@ end
 
 def etf_profile_data(ticker)
   doc = extract_etf_html_data(ticker, :profile)
+  
+  title_arr = doc.css("h1[class='data-title']").text.split("\n")
+  title_arr.delete("")
   data_array = doc.css('div.mm-main-container').css('div.col-sm-6').css('li').text.split("\n")
   data_array.delete("")
+
   profile_data = {}
+  profile_data[:ticker] = title_arr[0]
+  profile_data[:name] = title_arr[1]
 
   data_array.each_with_index do |elem, idx|
     case elem
-    when "Issuer" then profile_data[:issuer] = data_array[idx + 1]
-    when "Expense Ratio" then profile_data[:exp_ratio] = data_array[idx + 1]
-    when "Inception" then profile_data[:date] = data_array[idx + 1]
-    when "AUM" then profile_data[:aum] = data_array[idx + 1]
-    when "3 Month Avg. Volume" then profile_data[:volume] = data_array[idx + 1]
+    when "Issuer"
+      profile_data[:issuer] = data_array[idx + 1]
+    when "Expense Ratio"
+      profile_data[:exp_ratio] = data_array[idx + 1]
+    when "Inception"
+      date = data_array[idx + 1]
+      month, day, year = date.split
+      date = "#{month_name_long_form(month)} #{day} #{year}"
+      profile_data[:date] = date
+    when "AUM"
+      aum = data_array[idx + 1]
+      amount, letter = aum.split
+      profile_data[:aum] = "#{amount} million" if letter == "M"
+      profile_data[:aum] = "#{amount} billion" if letter == "B"
+    when "3 Month Avg. Volume"
+      profile_data[:volume] = data_array[idx + 1]
     end
   end
 
@@ -208,7 +265,7 @@ def etf_holdings_data(ticker)
     holding_elements.pop
     ticker = holding_elements.shift
     company = holding_elements.join(" ")
-    holdings << { ticker => company }
+    holdings << [company, ticker]
   end
 
   holdings_data = { etf_holdings: holdings }

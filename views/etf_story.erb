@@ -2,6 +2,7 @@
 </div>
 
 <div class="etf_1">
+  <h2><%= session[:etf_1][:name] %> (<%= session[:etf_1][:ticker] %>)</h2>
   <ul>
     <li>Performance over 1-Year: <%= session[:etf_1][:one_yr_return] %></li>
     <li>Expense Ratio: <%= session[:etf_1][:exp_ratio] %></li>
@@ -11,9 +12,11 @@
     <li>Inception Date: <%= session[:etf_1][:date] %></li>
     <li>Issuer: <%= session[:etf_1][:issuer] %></li>
   </ul>
+  <p><%= etf_holdings_sentence(:etf_1) %></p>
 </div>
 
 <div class="etf_2">
+  <h2><%= session[:etf_2][:name] %> (<%= session[:etf_2][:ticker] %>)</h2>
   <ul>
     <li>Performance over 1-Year: <%= session[:etf_2][:one_yr_return] %></li>
     <li>Expense Ratio: <%= session[:etf_2][:exp_ratio] %></li>
@@ -23,9 +26,11 @@
     <li>Inception Date: <%= session[:etf_2][:date] %></li>
     <li>Issuer: <%= session[:etf_2][:issuer] %></li>
   </ul>
+  <p><%= etf_holdings_sentence(:etf_2) %></p>
 </div>
 
 <div class="etf_3">
+  <h2><%= session[:etf_3][:name] %> (<%= session[:etf_3][:ticker] %>)</h2>
   <ul>
     <li>Performance over 1-Year: <%= session[:etf_3][:one_yr_return] %></li>
     <li>Expense Ratio: <%= session[:etf_3][:exp_ratio] %></li>
@@ -35,4 +40,5 @@
     <li>Inception Date: <%= session[:etf_3][:date] %></li>
     <li>Issuer: <%= session[:etf_3][:issuer] %></li>
   </ul>
+  <p><%= etf_holdings_sentence(:etf_3) %></p>
 </div>

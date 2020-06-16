@@ -6,6 +6,15 @@
 <form class="inline" method="get" action="/etfs">
   <button type="submit">Best ETFs</button>
 </form>
+<form class="inline" method="get" action="/makes_money">
+  <button type="submit">How Company X Makes Money</button>
+</form>
+<form class="inline" method="get" action="/earnings">
+  <button type="submit">Earnings Preview</button>
+</form>
+<form class="inline" method="get" action="/ownership">
+  <button type="submit">5 Companies Owned by X</button>
+</form>
 <% if session[:admin] %>
   <form method="post" action="/signout">
     <p class="user-status">

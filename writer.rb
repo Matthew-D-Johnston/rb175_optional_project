@@ -124,7 +124,7 @@ def stock_data(file, rank)
   when "growth.xlsx" then stock_hash[:growth] = (stock_data[4].to_f * 100).round(1)
   when "momentum.xlsx" then stock_hash[:return] = (stock_data[4].to_f * 100).round(1)
   end
-  stock_hash[:description] = load_company_descriptions[stk_name.gsub(" ", "_")]
+  stock_hash[:description] = load_company_descriptions("company_descriptions")[stk_name.gsub(" ", "_")]
   stock_hash
 end
 

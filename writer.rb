@@ -5,6 +5,7 @@ require "yaml"
 require "roo"
 require "nokogiri"
 require "open-uri"
+require "bcrypt"
 
 configure do
   enable :sessions
@@ -280,6 +281,26 @@ def combined_etf_data(ticker)
   h1.merge(h2).merge(h3).merge(h4)
 end
 
+def load_admin_credentials
+  credentials_path = if ENV["RACK_ENV"] == "test"
+    File.expand_path("../test/admin.yml", __FILE__)
+  else
+    File.expand_path("../admin.yml", __FILE__)
+  end
+  YAML.load_file(credentials_path)
+end
+
+def valid_credentials?(username, password)
+  credentials = load_admin_credentials
+
+  if credentials.key?(username)
+    bcrypt_password = BCrypt::Password.new(credentials[username])
+    bcrypt_password == password
+  else
+    false
+  end
+end
+
 get "/" do
   erb :home
 end
@@ -299,7 +320,7 @@ get "/stock_story" do
   erb :stock_story
 end
 
-get "/update" do
+get "/update" do  
   erb :update
 end
 
@@ -309,6 +330,16 @@ end
 
 get "/etf_story" do
   erb :etf_story
+end
+
+get "/signin" do
+  erb :signin
+end
+
+post "/signout" do
+  session.delete(:admin)
+  session[:message] = "You are no long signed in as the system administrator."
+  redirect "/"
 end
 
 post "/stocks" do
@@ -323,15 +354,20 @@ post "/stocks" do
 end
 
 post "/update" do
-  company_name = params[:name].gsub(" ", "_")
-  company_description = params[:description]
+  if session[:admin]
+    company_name = params[:name].gsub(" ", "_")
+    company_description = params[:description]
 
-  companies = load_company_descriptions
-  companies[company_name] = company_description
-  write_company_descriptions(companies)
+    companies = load_company_descriptions
+    companies[company_name] = company_description
+    write_company_descriptions(companies)
 
-  session[:message] = "Database has been updated with a description for #{params[:name]}"
-  redirect "/update"
+    session[:message] = "Database has been updated with a description for #{params[:name]}"
+    redirect "/update"
+  else
+    session[:message] = "You are not signed in. You may not update the database."
+    redirect "/update"
+  end
 end
 
 post "/etfs" do
@@ -348,4 +384,16 @@ post "/etfs" do
   session[:etf_3] = combined_etf_data(ticker_3)
 
   redirect "/etf_story"
+end
+
+post "/signin" do
+  if valid_credentials?(params[:admin], params[:password])
+    session[:admin] = params[:admin]
+    session[:message] = "You are now signed in as the system administrator."
+    redirect "/"
+  else
+    session[:message] = "Sign in failed. Incorrect password or username."
+    status 422
+    erb :signin
+  end
 end

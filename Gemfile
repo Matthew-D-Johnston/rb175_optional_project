@@ -12,6 +12,8 @@ gem "roo"
 
 gem "nokogiri"
 
+gem "bcrypt"
+
 group :production do
   gem "puma"
 end

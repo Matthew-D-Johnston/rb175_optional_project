@@ -1089,4 +1089,14 @@ Steps:
   </div>
   ```
 
-  
+---
+
+### Next Steps:
+
+* Implement a company description database for the ETF stories.
+* Implement an Admin signin button on the home page. This will be required to update any of the company description databases.
+* Implement a way for the user to upload the `value.xlsx`, `growth.xlsx`, and `momentum.xlsx` files to the `data` directory.
+
+#### Implement an Admin password section on the Company Database Update Page
+
+* 

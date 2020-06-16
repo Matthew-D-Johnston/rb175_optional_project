@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.17.2)
+    bcrypt (3.1.13)
     erubis (2.7.0)
     mini_portile2 (2.4.0)
     minitest (5.14.1)
@@ -37,6 +38,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   erubis
   minitest
   nokogiri

@@ -1,0 +1,28 @@
+<h2>Best ETFs: Company Description Database Update</h2>
+<form method="post" action="/etf_update">
+  <div>
+    <p>
+      <label for="name"> <b>Company Name:</b>
+        <input name="name" id="name" />
+      </label>
+    </p>
+  </div>
+  <div>
+    <p>
+      <label for="description"> <b>Company Description:</b>
+      </label>
+    </p>
+    <p>
+      <textarea name="description" id="description" rows="2" cols="40"></textarea>
+    </p>
+    </p>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<% if session[:admin] %>
+  <p>You are signed in as the system administrator. You may update the database.</p>
+<% else %>
+  <p>You are not signed in as the system administrator.</p>
+  <p class="user-status"><a href="/signin">Sign in here.</a></p>
+<% end %>
+<p><a href="/">Home</a></p>

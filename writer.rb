@@ -46,9 +46,18 @@ helpers do
     holding_2 = session[etf][:etf_holdings][1]
     holding_3 = session[etf][:etf_holdings][2]
 
+    company_database = load_company_descriptions("etf_company_descriptions")
+
     holdings_phrase = []
 
     [holding_1, holding_2, holding_3].each do |holding|
+      company_description = ""
+      if company_database.key?(holding[0].gsub(" ", "_"))
+        company_description = company_database[holding[0].gsub(" ", "_")]
+      else
+        company_description = "a ..."
+      end
+
       company = ""
       if holding[0] =~ /(Inc|Corp|Co|Ltd)$/
         company = "#{holding[0]}."
@@ -56,10 +65,10 @@ helpers do
         company = holding[0]
       end
       ticker = holding[1]
-      holdings_phrase << "#{company} (#{ticker})"
+      holdings_phrase << "#{company} (#{ticker}), #{company_description}"
     end
 
-    "The fund's top three holdings include #{holdings_phrase[0]}, a ...; #{holdings_phrase[1]}, a ...; and #{holdings_phrase[2]}, a ."
+    "The fund's top three holdings include #{holdings_phrase[0]}; #{holdings_phrase[1]}; and #{holdings_phrase[2]}."
   end
 end
 
@@ -71,20 +80,20 @@ def data_path
   end
 end
 
-def load_company_descriptions
+def load_company_descriptions(file)
   descriptions_path = if ENV["RACK_ENV"] == "test"
-    File.expand_path("../test/company_descriptions.yml", __FILE__)
+    File.expand_path("../test/#{file}.yml", __FILE__)
   else
-    File.expand_path("../company_descriptions.yml", __FILE__)
+    File.expand_path("../#{file}.yml", __FILE__)
   end
   YAML.load_file(descriptions_path)
 end
 
-def write_company_descriptions(companies)
+def write_company_descriptions(companies, file)
   descriptions_path = if ENV["RACK_ENV"] == "test"
-    File.expand_path("../test/company_descriptions.yml", __FILE__)
+    File.expand_path("../test/#{file}.yml", __FILE__)
   else
-    File.expand_path("../company_descriptions.yml", __FILE__)
+    File.expand_path("../#{file}.yml", __FILE__)
   end
 
   File.open(descriptions_path, "w") { |file| file.write(companies.to_yaml) }
@@ -324,6 +333,10 @@ get "/update" do
   erb :update
 end
 
+get "/etf_update" do
+  erb :etf_update
+end
+
 get "/etfs" do
   erb :etfs
 end
@@ -338,7 +351,7 @@ end
 
 post "/signout" do
   session.delete(:admin)
-  session[:message] = "You are no long signed in as the system administrator."
+  session[:message] = "You are no longer signed in as the system administrator."
   redirect "/"
 end
 
@@ -358,9 +371,9 @@ post "/update" do
     company_name = params[:name].gsub(" ", "_")
     company_description = params[:description]
 
-    companies = load_company_descriptions
+    companies = load_company_descriptions("company_descriptions")
     companies[company_name] = company_description
-    write_company_descriptions(companies)
+    write_company_descriptions(companies, "company_descriptions")
 
     session[:message] = "Database has been updated with a description for #{params[:name]}"
     redirect "/update"
@@ -395,5 +408,22 @@ post "/signin" do
     session[:message] = "Sign in failed. Incorrect password or username."
     status 422
     erb :signin
+  end
+end
+
+post "/etf_update" do
+  if session[:admin]
+    company_name = params[:name].gsub(" ", "_")
+    company_description = params[:description]
+
+    companies = load_company_descriptions("etf_company_descriptions")
+    companies[company_name] = company_description
+    write_company_descriptions(companies, "etf_company_descriptions")
+
+    session[:message] = "Database has been updated with a description for #{params[:name]}"
+    redirect "/etf_update"
+  else
+    session[:message] = "You are not signed in. You may not update the database."
+    redirect "/etf_update"
   end
 end

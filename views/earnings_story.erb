@@ -1,0 +1,142 @@
+<div class="headings">
+  <h2>Headings</h2>
+  <p><b>HEADING:</b> <%= @nick_name %> Earnings: What to Look For</p>
+  <p><b>SOCIAL TITLE:</b> <%= @nick_name %> Earnings: What to Look For</p>
+  <p><b>SUBHEADING:</b> Focus on <%= @ticker %> [company specific metric]</p>
+  <p><b>META TITLE:</b> <%= @nick_name %> Earnings: What to look for from <%= @ticker %></p>
+  <p><b>META DESCRIPTION:</b> <%= @nick_name %> (<%= @ticker %>) reports <%= @quarter %> earnings [after/before] market [close/open] on [Month Day]. Can they [deliver/achieve/action-verb] [key metric]?</p>
+</div>
+<div class="tickers">
+  <h2>Tickers</h2>
+  <p><%= @ticker %></p>
+  <p>any other ticker that appears in the story as well</p>
+</div>
+<div class="takeaways">
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li>Analysts estimate EPS of $X.XX vs. $X.XX in [<%= @quarter %> from one year ago]</li>
+    <li>[Key Metric] is expected to [fall/rise/grow/be flat] YOY.</li>
+    <li>[Connection to current events]. Example: COVID-19 is expected to hit sales hard.</li>
+  </ul>
+</div>
+<div class="intro">
+  <h2>Intro</h2>
+  <ul>
+    <li>open with prominent recent news as hook</li>
+    <li>tie it to the company's key metric</li>
+    <li>Provide the date and time of the earnings release</li>
+    <li><%= @nick_name %> reports earnings on [month] [day], [year] for <%= @quarter %> [year].</li>
+    <li>mention if the stock underpeformed, matched, or outperformed the market over the past 12 months, and if this differs from longer-term performance</li>
+    <li>draw attention to times that previous earnings reports have affected the stock in a major way, if any</li>
+  </ul>
+</div>
+<div class="chart">
+  <h3><b>***[Stock Chart Goes Here]***</b></h3>
+</div>
+<div class="earnings">
+  <ul>
+    <li>explain how revenue/earnings have been in the recent past (up/down/flat?)</li>
+    <li>sharp discrepancy between revenue and EPS in terms of size or direction of movement?</li>
+    <li>mention most recent quarterly earnings. Was there a surprise? If so, in what direction, and how did it move the stock?</li>
+    <li>no need to bring up specific numbers, those are in the table. One exception are last Q's EPS/revenue and this Q's EPS estimate.</li>
+    <li>SEO Note: When you mention the estimate, format it like this: "Analysts expect <%= @nick_name %> to report earnings of $X per share."</li>
+    <li>use adjusted EPS</li>
+    <li>No need to get an estimate for the upcoming company-specific metric. This is not widely available data. We are looking into getting it.</li>
+  </ul>
+  <div>
+    <% case @quarter %>
+    <% when "Q1" %>
+      <p><b>Q4 prior year</b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+        <li>Suprise?:</li>
+        <li>Stock:</li>
+      </ul>
+      <p><b>Q3 prior year<b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+        <li>Suprise?:</li>
+        <li>Stock:</li>
+      </ul>
+      <p><b>Q1 year Estimate</b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+      </ul>
+    <% when "Q2" %>
+      <p><b>Q1 year</b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+        <li>Suprise?:</li>
+        <li>Stock:</li>
+      </ul>
+      <p><b>Q4 prior year<b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+        <li>Suprise?:</li>
+        <li>Stock:</li>
+      </ul>
+      <p><b>Q2 year Estimate</b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+      </ul>
+    <% when "Q3" %>
+      <p><b>Q2 year</b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+        <li>Suprise?:</li>
+        <li>Stock:</li>
+      </ul>
+      <p><b>Q1 year<b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+        <li>Suprise?:</li>
+        <li>Stock:</li>
+      </ul>
+      <p><b>Q3 year Estimate</b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+      </ul>
+    <% when "Q4" %>
+      <p><b>Q3 year</b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+        <li>Suprise?:</li>
+        <li>Stock:</li>
+      </ul>
+      <p><b>Q2 year<b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+        <li>Suprise?:</li>
+        <li>Stock:</li>
+      </ul>
+      <p><b>Q4 year Estimate</b></p>
+      <ul>
+        <li>Adj. EPS:</li>
+        <li>Revenue:</li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+<div class="table">
+  <h3><b>***[Key Metric Table Goes Here]***</b></h3>
+</div>
+<div class="metric">
+  <ul>
+    <li>Comprehensively explain the company-specific metric mentioned in the opening.</li>
+    <li>If we have a definition for it, such as Net Interest Margin for banks, link to our definition.</li>
+    <li>Explain why this metric is specifically important for the company</li>
+    <li>Explain what previous trends have been with this metric.</li>
+    <li>Include what it was in the most recently reported quarter.</li>
+  </ul>
+</div>

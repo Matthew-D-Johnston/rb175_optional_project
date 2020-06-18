@@ -349,6 +349,19 @@ get "/signin" do
   erb :signin
 end
 
+get "/earnings" do
+  erb :earnings
+end
+
+get "/earnings_story" do
+  @full_name = session[:name]
+  @nick_name = session[:name].split[0]
+  @ticker = session[:ticker]
+  @quarter = session[:quarter]
+  
+  erb :earnings_story
+end
+
 post "/signout" do
   session.delete(:admin)
   session[:message] = "You are no longer signed in as the system administrator."
@@ -426,4 +439,12 @@ post "/etf_update" do
     session[:message] = "You are not signed in. You may not update the database."
     redirect "/etf_update"
   end
+end
+
+post "/earnings" do
+  session[:name] = params[:name]
+  session[:ticker] = params[:ticker]
+  session[:quarter] = params[:quarter]
+
+  redirect "/earnings_story"
 end

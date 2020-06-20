@@ -358,6 +358,14 @@ get "/earnings_story" do
   @nick_name = session[:name].split[0]
   @ticker = session[:ticker]
   @quarter = session[:quarter]
+  @year = session[:year]
+  @eps_estimate = session[:eps_estimate]
+  @eps_year_ago = session[:eps_year_ago]
+  @report_year = session[:report_year]
+  @report_month = session[:report_month]
+  @report_day = session[:report_day]
+  @aft_bef = session[:aft_bef]
+  @open_close = session[:open_close]
   
   erb :earnings_story
 end
@@ -445,6 +453,14 @@ post "/earnings" do
   session[:name] = params[:name]
   session[:ticker] = params[:ticker]
   session[:quarter] = params[:quarter]
+  session[:year] = params[:year].to_i
+  session[:eps_estimate] = params[:eps_estimate]
+  session[:eps_year_ago] = params[:eps_year_ago]
+  session[:report_year] = params[:report_year]
+  session[:report_month] = params[:report_month]
+  session[:report_day] = params[:report_day]
+  session[:aft_bef] = params[:aft_bef]
+  session[:open_close] = params[:open_close]
 
   redirect "/earnings_story"
 end

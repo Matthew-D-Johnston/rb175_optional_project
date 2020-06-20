@@ -4,7 +4,7 @@
   <p><b>SOCIAL TITLE:</b> <%= @nick_name %> Earnings: What to Look For</p>
   <p><b>SUBHEADING:</b> Focus on <%= @ticker %> [company specific metric]</p>
   <p><b>META TITLE:</b> <%= @nick_name %> Earnings: What to look for from <%= @ticker %></p>
-  <p><b>META DESCRIPTION:</b> <%= @nick_name %> (<%= @ticker %>) reports <%= @quarter %> earnings [after/before] market [close/open] on [Month Day]. Can they [deliver/achieve/action-verb] [key metric]?</p>
+  <p><b>META DESCRIPTION:</b> <%= @nick_name %> (<%= @ticker %>) reports <%= @quarter %> earnings <%= @aft_bef %> market <%= @open_close %> on <%= @report_month %> <%= @report_day %>. Can they [deliver/achieve/action-verb] [key metric]?</p>
 </div>
 <div class="tickers">
   <h2>Tickers</h2>
@@ -14,24 +14,25 @@
 <div class="takeaways">
   <h2>Key Takeaways</h2>
   <ul>
-    <li>Analysts estimate EPS of $X.XX vs. $X.XX in [<%= @quarter %> from one year ago]</li>
+    <li>Analysts estimate EPS of <%= @eps_estimate %> vs. <%= @eps_year_ago %> in <%= @quarter %> <%= @year - 1 %></li>
     <li>[Key Metric] is expected to [fall/rise/grow/be flat] YOY.</li>
     <li>[Connection to current events]. Example: COVID-19 is expected to hit sales hard.</li>
   </ul>
 </div>
 <div class="intro">
   <h2>Intro</h2>
+  <%= @full_name %> (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= @ticker %>"><%= @ticker %></a>) ...
   <ul>
     <li>open with prominent recent news as hook</li>
     <li>tie it to the company's key metric</li>
     <li>Provide the date and time of the earnings release</li>
-    <li><%= @nick_name %> reports earnings on [month] [day], [year] for <%= @quarter %> [year].</li>
+    <li><%= @nick_name %> reports earnings on <%= @report_month %> <%= @report_day %>, <%= @report_year %> for <%= @quarter %> <%= @year %>.</li>
     <li>mention if the stock underpeformed, matched, or outperformed the market over the past 12 months, and if this differs from longer-term performance</li>
     <li>draw attention to times that previous earnings reports have affected the stock in a major way, if any</li>
   </ul>
 </div>
 <div class="chart">
-  <h3><b>***[Stock Chart Goes Here]***</b></h3>
+  <h3><b>***[Stock Chart Goes Here (Get chart <a href="https://www.tradingview.com/chart/NvpTDSR2/">here</a>)]***</b></h3>
 </div>
 <div class="earnings">
   <ul>

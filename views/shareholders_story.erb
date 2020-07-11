@@ -1,0 +1,146 @@
+<div class="headings">
+  <h2>Headings</h2>
+  <p><b>HEADING:</b> Top <%= @nick_name %> Shareholders</p>
+  <p><b>SOCIAL TITLE:</b> Top <%= @nick_name %> Shareholders</p>
+  <p><b>SUBHEADING:</b> ***None***</p>
+  <p><b>META TITLE:</b> Top <%= @nick_name %> Shareholders</p>
+  <p><b>META DESCRIPTION:</b> The top shareholders of <%= @nick_name %> are <%= @ind_sh_1 %>, <%= @ind_sh_2 %>, <%= @ind_sh_3 %>, <%= @inst_sh_1 %>, <%= @inst_sh_2 %>, and <%= @inst_sh_3 %>
+  </p>
+</div>
+<div class="tickers">
+  <h2>Tickers</h2>
+  <p><%= @ticker %></p>
+</div>
+<div class="intro">
+  <h2>Intro</h2>
+  <p><%= @name %> (<a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= @ticker %>"><%= @ticker %></a>) ...</p>
+  <ul>
+    <li>Describe what the company does in a few sentences.</li>
+    <li>If there is a good place describing the company’s business model, or on the second mention of the company’s name, link to our “How X Makes Money” article for the company if we have one and it’s on the new blueprint (it should be clear since it will have been updated in the last half a year or so).</li>
+  </ul>
+  <p>The top shareholders of <%= @nick_name %> are <%= @ind_sh_1 %>, <%= @ind_sh_2 %>, <%= @ind_sh_3 %>, <%= @inst_sh_1 %>, <%= @inst_sh_2 %>, and <%= @inst_sh_3 %>
+  </p>
+  <ul>
+    <li>If something extremely notable has happened to the company recently, you can mention it, for example, when Volkswagen had its emissions scandal or Amazon bought Whole Foods. A new CFO is too minor, for example.
+    </li>
+  </ul>
+  <p>
+    <%= @nick_name %>'s twelve-month trailing net income and revenue are $<%= @net_income %> and $<%= @revenue %>, respectively. The company's <a href="https://www.investopedia.com/terms/m/marketcapitalization.asp">market cap</a> is about $<%= @market_cap %>. These financial data are as of <%= @date %>.
+  </p>
+  <p>
+    "Insider" refers to people in senior management positions and members of the board of directors, as well as people or entities that own more than 10% of the company's stock. In this context, it has nothing to do with insider trading.
+  </p>
+</div>
+<div class="individuals">
+  <h3>Top 3 Individual Insider Shareholders</h3>
+  <h4><%= @ind_sh_1 %></h4>
+  <p>
+    <%= @ind_sh_1 %> owns a total of <%= @tsh_1 %> <%= @nick_name %> shares, representing <%= @pso_1 %> of the company's total <a href="https://www.investopedia.com/terms/o/outstandingshares.asp">shares outstanding</a>.
+  </p>
+  <ul>
+    <li>
+      How many shares they own, and what percent of the total shares that is, if it is fewer than 0.01%, just say “less than 0.01% of shares”.
+    </li>
+    <li>
+      If they work at the company, what is their position?
+    </li>
+    <li>
+      How long have they been there?
+    </li>
+    <li>
+      Did they found the company? 
+    </li>
+    <li>
+      What notable contributions have they made to it?
+    </li>
+    <li>
+      If they don’t work there, did they? And when and why did they leave?
+    </li>
+    <li>
+      In addition if they are on the Forbes list, what is their net worth.
+    </li>
+    <li>
+      Note: There is no need to mention where they went to school
+    </li>
+  </ul>
+  <h4><%= @ind_sh_2 %></h4>
+  <p>
+    <%= @ind_sh_2 %> owns a total of <%= @tsh_2 %> <%= @nick_name %> shares, representing <%= @pso_2 %> of the company's total shares outstanding.
+  </p>
+    <ul>
+    <li>
+      How many shares they own, and what percent of the total shares that is, if it is fewer than 0.01%, just say “less than 0.01% of shares”.
+    </li>
+    <li>
+      If they work at the company, what is their position?
+    </li>
+    <li>
+      How long have they been there?
+    </li>
+    <li>
+      Did they found the company? 
+    </li>
+    <li>
+      What notable contributions have they made to it?
+    </li>
+    <li>
+      If they don’t work there, did they? And when and why did they leave?
+    </li>
+    <li>
+      In addition if they are on the Forbes list, what is their net worth.
+    </li>
+    <li>
+      Note: There is no need to mention where they went to school
+    </li>
+  </ul>
+  <h4><%= @ind_sh_3 %></h4>
+  <p>
+    <%= @ind_sh_3 %> owns a total of <%= @tsh_3 %> <%= @nick_name %> shares, representing <%= @pso_3 %> of the company's total shares outstanding.
+  </p>
+    <ul>
+    <li>
+      How many shares they own, and what percent of the total shares that is, if it is fewer than 0.01%, just say “less than 0.01% of shares”.
+    </li>
+    <li>
+      If they work at the company, what is their position?
+    </li>
+    <li>
+      How long have they been there?
+    </li>
+    <li>
+      Did they found the company? 
+    </li>
+    <li>
+      What notable contributions have they made to it?
+    </li>
+    <li>
+      If they don’t work there, did they? And when and why did they leave?
+    </li>
+    <li>
+      In addition if they are on the Forbes list, what is their net worth.
+    </li>
+    <li>
+      Note: There is no need to mention where they went to school
+    </li>
+  </ul>
+</div>
+<div class="institutions">
+  <h3>Top 3 Institutional Shareholders</h3>
+  <ul>
+    <li>
+      Note how widely held the shares are by institutions. Example: "Microsoft is the most widely held stock among mutual funds, according to Morningstar."
+    </li>
+  </ul>
+  <h4><%= @inst_sh_1 %></h4>
+  <p>
+    <%= @inst_sh_1 %> owns <%= @sh_1 %> shares of <%= @nick_name %>, representing <%= @os_1 %> of total shares outstanding, according to the company's <%= @source_1 %> filing for the period ending <%= @sd_1 %>.
+  </p>
+  <h4><%= @inst_sh_2 %></h4>
+  <p>
+    <%= @inst_sh_2 %> owns <%= @sh_2 %> shares of <%= @nick_name %>, representing <%= @os_2 %> of total shares outstanding, according to the company's <%= @source_2 %> filing for the period ending <%= @sd_2 %>.
+  </p>
+  <h4><%= @inst_sh_3 %></h4>
+  <p>
+    <%= @inst_sh_3 %> owns <%= @sh_3 %> shares of <%= @nick_name %>, representing <%= @os_3 %> of total shares outstanding, according to the company's <%= @source_3 %> filing for the period ending <%= @sd_3 %>.
+  </p>
+</div>

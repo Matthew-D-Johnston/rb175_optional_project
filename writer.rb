@@ -337,6 +337,10 @@ get "/etf_update" do
   erb :etf_update
 end
 
+get "/shareholders" do
+  erb :shareholders
+end
+
 get "/etfs" do
   erb :etfs
 end
@@ -368,6 +372,49 @@ get "/earnings_story" do
   @open_close = session[:open_close]
   
   erb :earnings_story
+end
+
+get "/shareholders_story" do
+  @name = session[:name]
+  @nick_name = session[:nick_name]
+  @ticker = session[:ticker]
+  @revenue= session[:revenue]
+  @net_income = session[:net_income]
+  @market_cap = session[:market_cap]
+  @date = session[:date]
+
+  @ind_sh_1 = session[:ind_sh_1]
+  @tsh_1 = session[:tsh_1]
+  @pso_1 = session[:pso_1]
+
+  @ind_sh_2 = session[:ind_sh_2]
+  @tsh_2 = session[:tsh_2]
+  @pso_2 = session[:pso_2]
+
+  @ind_sh_3 = session[:ind_sh_3]
+  @tsh_3 = session[:tsh_3]
+  @pso_3 = session[:pso_3]
+
+  @inst_sh_1 = session[:inst_sh_1]
+  @sh_1 = session[:sh_1]
+  @os_1 = session[:os_1]
+  @source_1 = session[:source_1]
+  @sd_1 = session[:sd_1]
+
+  @inst_sh_2 = session[:inst_sh_2]
+  @sh_2 = session[:sh_2]
+  @os_2 = session[:os_2]
+  @source_2 = session[:source_2]
+  @sd_2 = session[:sd_2]
+
+  @inst_sh_3 = session[:inst_sh_3]
+  @sh_3 = session[:sh_3]
+  @os_3 = session[:os_3]
+  @source_3 = session[:source_3]
+  @sd_3 = session[:sd_3]
+
+
+  erb :shareholders_story
 end
 
 post "/signout" do
@@ -463,4 +510,47 @@ post "/earnings" do
   session[:open_close] = params[:open_close]
 
   redirect "/earnings_story"
+end
+
+post "/shareholders" do
+  session[:name] = params[:name]
+  session[:nick_name] = params[:nick_name]
+  session[:ticker] = params[:ticker]
+
+  session[:revenue] = params[:revenue]
+  session[:net_income] = params[:net_income]
+  session[:market_cap] = params[:market_cap]
+  session[:date] = params[:date]
+
+  session[:ind_sh_1] = params[:ind_sh_1]
+  session[:tsh_1] = params[:tsh_1]
+  session[:pso_1] = params[:pso_1]
+
+  session[:ind_sh_2] = params[:ind_sh_2]
+  session[:tsh_2] = params[:tsh_2]
+  session[:pso_2] = params[:pso_2]
+
+  session[:ind_sh_3] = params[:ind_sh_3]
+  session[:tsh_3] = params[:tsh_3]
+  session[:pso_3] = params[:pso_3]
+
+  session[:inst_sh_1] = params[:inst_sh_1]
+  session[:sh_1] = params[:sh_1]
+  session[:os_1] = params[:os_1]
+  session[:source_1] = params[:source_1]
+  session[:sd_1] = params[:sd_1]
+
+  session[:inst_sh_2] = params[:inst_sh_2]
+  session[:sh_2] = params[:sh_2]
+  session[:os_2] = params[:os_2]
+  session[:source_2] = params[:source_2]
+  session[:sd_2] = params[:sd_2]
+
+  session[:inst_sh_3] = params[:inst_sh_3]
+  session[:sh_3] = params[:sh_3]
+  session[:os_3] = params[:os_3]
+  session[:source_3] = params[:source_3]
+  session[:sd_3] = params[:sd_3]
+
+  redirect "/shareholders_story"
 end

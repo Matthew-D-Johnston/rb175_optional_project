@@ -310,6 +310,10 @@ def valid_credentials?(username, password)
   end
 end
 
+def remove_corporate_name_ending(name)
+  name.gsub(/( Corp.| Inc.| Co.| PLC| Ltd.)/, "")
+end
+
 get "/" do
   erb :home
 end
@@ -396,18 +400,21 @@ get "/shareholders_story" do
   @pso_3 = session[:pso_3]
 
   @inst_sh_1 = session[:inst_sh_1]
+  @inst_1_nick_name = remove_corporate_name_ending(@inst_sh_1)
   @sh_1 = session[:sh_1]
   @os_1 = session[:os_1]
   @source_1 = session[:source_1]
   @sd_1 = session[:sd_1]
 
   @inst_sh_2 = session[:inst_sh_2]
+  @inst_2_nick_name = remove_corporate_name_ending(@inst_sh_2)
   @sh_2 = session[:sh_2]
   @os_2 = session[:os_2]
   @source_2 = session[:source_2]
   @sd_2 = session[:sd_2]
 
   @inst_sh_3 = session[:inst_sh_3]
+  @inst_3_nick_name = remove_corporate_name_ending(@inst_sh_3)
   @sh_3 = session[:sh_3]
   @os_3 = session[:os_3]
   @source_3 = session[:source_3]

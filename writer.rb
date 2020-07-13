@@ -311,7 +311,7 @@ def valid_credentials?(username, password)
 end
 
 def remove_corporate_name_ending(name)
-  name.gsub(/( Corp.| Inc.| Co.| PLC| Ltd.)/, "")
+  name.gsub(/( Corp.| Inc.| Co.| PLC| Ltd.| LLC)/, "")
 end
 
 get "/" do

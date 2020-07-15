@@ -386,6 +386,8 @@ get "/shareholders_story" do
   @net_income = session[:net_income]
   @market_cap = session[:market_cap]
   @date = session[:date]
+  @month, @day, @year = @date.split
+  @month = @month[0..2]
 
   @ind_sh_1 = session[:ind_sh_1]
   @tsh_1 = session[:tsh_1]

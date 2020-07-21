@@ -2,8 +2,8 @@
   <h2>Headings</h2>
   <ul>
     <li><b>HEADING:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
-    <li><b>SUBHEADING:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
-    <li><b>SOCIAL TITLE:</b> <%= @value[:stock_1][:ticker] %>, <%= @growth[:stock_1][:ticker] %>, and <%= @momentum[:stock_1][:ticker] %> were top for value, growth, and momentum, respectively</li> 
+    <li><b>SOCIAL TITLE:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
+    <li><b>SUBHEADING:</b> <%= @value[:stock_1][:ticker] %>, <%= @growth[:stock_1][:ticker] %>, and <%= @momentum[:stock_1][:ticker] %> were top for value, growth, and momentum, respectively</li> 
     <li><b>META TITLE:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
     <li><b>META DESCRIPTION:</b> These are the <%= session[:type].downcase %> stocks with the best value, fastest growth, and most momentum for <%= session[:period] %>.</li>
   </ul>
@@ -17,7 +17,7 @@
 <div class="intro">
   <h2>Intro</h2>
   <p>
-    <%= session[:type] %> stocks, as represented by the <%= session[:sector_index] %>, have <%= compare_performance %> the broader market, providing investors with a total return of <%= session[:index_return] %> compared to the S&P 500's total return of <%= session[:sp500_return] %> over the past 12 months (YCharts. "<a href="https://ycharts.com/">Financial Data</a>," Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.). These market performance numbers and the statistics in the tables below are as of <%= date[:month] %> <%= date[:day] %>.
+    <%= session[:type] %> stocks, as represented by the <%= session[:sector_index] %>, have <%= compare_performance %> the broader market, providing investors with a total return of <%= session[:index_return] %> compared to the S&P 500's total return of <%= session[:sp500_return] %> over the past 12 months (YCharts. "<a href="https://ycharts.com/">Financial Data</a>." Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.). These market performance numbers and the statistics in the tables below are as of <%= date[:month] %> <%= date[:day] %>.
   </p>
   <p>
     <% if session[:earn_or_sales] == "E" %>

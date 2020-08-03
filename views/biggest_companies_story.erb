@@ -1,0 +1,74 @@
+<div class="headings">
+  <h2>Headings</h2>
+  <ul>
+    <li><b>HEADING:</b> 10 Biggest <%= session[:type] %> Companies</li>
+    <li><b>SOCIAL TITLE:</b> 10 Biggest <%= session[:type] %> Companies</li>
+    <li><b>SUBHEADING:</b> <%= @all_companies[:company_1][:ticker] %>, <%= @all_companies[:company_2][:ticker] %>, and <%= @all_companies[:company_3][:ticker] %> lead the 10 biggest <%= session[:type].downcase %> companies list</li> 
+    <li><b>META TITLE:</b> 10 Biggest <%= session[:type] %> Companies</li>
+    <li><b>META DESCRIPTION:</b> With <%= @all_companies[:company_1][:name].gsub(/ (Inc|Corp|Co|Ltd).$/, '') %> leading the pack, these are the 10 biggest <%= session[:type].downcase %> companies by 12-month trailing revenue.</li>
+  </ul>
+</div>
+<div class="tickers">
+  <h2>Tickers</h2>
+    <ul>
+      <li><%= @company_1[:ticker] %></li>
+      <li><%= @company_2[:ticker] %></li>
+      <li><%= @company_3[:ticker] %></li>
+      <li><%= @company_4[:ticker] %></li>
+      <li><%= @company_5[:ticker] %></li>
+      <li><%= @company_6[:ticker] %></li>
+      <li><%= @company_7[:ticker] %></li>
+      <li><%= @company_8[:ticker] %></li>
+      <li><%= @company_9[:ticker] %></li>
+      <li><%= @company_10[:ticker] %></li>
+    </ul>
+</div>
+<div class="intro">
+  <h2>Intro</h2>
+  <ul>
+    <li>Describe the business of the companies being listed. For example, for 10 biggest tech companies, describe what goods and services that the tech sector produces.</li>
+    <li>If we have “tech sector” or “banks” or the company type as a term, link to it on the second mention, or the first mention if it is not in the first sentence or line.</li>
+  </ul>
+  <p>
+    These are the 10 biggest <%= session[:type].downcase %> companies by 12-month trailling <a href="https://www.investopedia.com/terms/t/ttm.asp">(TTM)</a> revenue. This list is limited to companies which are publicly traded in the U.S. or Canada, either directly or through <a href="https://www.investopedia.com/terms/a/adr.asp">ADRs</a>. Data is courtesy of YCharts.com. (YCharts. "<a href="https://ycharts.com/">Financial Data</a>." Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.) All figures are as of <%= date[:month] %> <%= date[:day] %>.
+  </p>
+  <p>
+    <% @all_companies.each do |_, company| %>
+      <% if company[:exchange] =~ /^OTC/ %>
+        <b>"Warning" Callout Block</b>
+        <br>Some of the stocks below are only traded <a href="https://www.investopedia.com/terms/o/otc.asp">over-the-counter (OTC)</a> in the U.S., not on exchanges. Trading OTC stocks often carries higher trading costs than trading stocks on exchanges. This can lower or even outweigh potential returns.
+        <% break %>
+      <% end %>
+    <% end %>
+  </p>
+</div>
+<div class="body">
+  <% @all_companies.each do |_, company| %>
+    <h3>#<%= company[:rank] %> <%= company[:name] %> <a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=<%= company[:ticker] %>">(<%= company[:ticker] %>)</a></h3>
+    <ul>
+      <li>Revenue (TTM): $<%= company[:revenue] %> <%= company[:revenue_units] %></li>
+      <li>Net Income (TTM): <%= company[:net_income] %> <%= company[:net_income_units] %></li>
+      <% if company[:rank] == 1 %>
+        <li><a href="https://www.investopedia.com/terms/m/marketcapitalization.asp">Market Cap</a>: $<%= company[:market_cap] %> <%= company[:market_cap_units] %></li>
+        <li>1-Year Trailing <a href="https://www.investopedia.com/terms/t/totalreturn.asp">Total Return</a>: <%= company[:returns] %>%</li>
+        <% if company[:pe_ratio] == 0.0 %>
+          <li><a href="https://www.investopedia.com/terms/p/price-earningsratio.asp">P/E Ratio</a> (TTM): N/A</li>
+        <% else %>
+          <li><a href="https://www.investopedia.com/terms/p/price-earningsratio.asp">P/E Ratio</a> (TTM): <%= company[:pe_ratio] %></li>
+        <% end %>
+      <% else %>
+        <li>Market Cap: $<%= company[:market_cap] %> <%= company[:market_cap_units] %></li>
+        <li>1-Year Trailing Total Return: <%= company[:returns] %>%</li>
+        <% if company[:pe_ratio] == 0.0 %>
+          <li>P/E Ratio (TTM): N/A</li>
+        <% else %>
+          <li>P/E Ratio (TTM): <%= company[:pe_ratio] %></li>
+        <% end %>
+      <% end %>
+      <li>Exchange: <%= company[:exchange] %></li>
+    </ul>
+    <p>
+      Follow this up with a short paragraph detailing what the company does, along with a link to a “How X Makes Money” story on the company, if we have one. Only do so if the “How X Makes Money” is on the new blueprint. You’ll know because it would have been updated since last December or so.
+    </p>
+  <% end %>
+</div>

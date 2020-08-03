@@ -128,10 +128,77 @@ def stock_data(file, rank)
   stock_hash
 end
 
+def company_data(file, rank)
+  workbook = load_xlsx_file(file)
+  comp_data = workbook.row(rank)
+  
+  company_hash = {}
+  company_name = comp_data[1]
+  
+  if comp_data[1] =~ /(Inc|Corp|Co|Ltd)$/
+    company_hash[:name] = company_name + '.'
+  else
+    company_hash[:name] = company_name
+  end
+  company_hash[:ticker] = comp_data[0]
+  company_hash[:revenue] = comp_data[2].to_f.round(1)
+  
+  revenue_units = comp_data[2].chars.last
+  case revenue_units
+  when 'M' then company_hash[:revenue_units] = 'million'
+  when 'B' then company_hash[:revenue_units] = 'billion'
+  when 'T' then company_hash[:revenue_units] = 'trillion'
+  end
+
+  net_income = comp_data[3].to_f.round(1)
+  if net_income < 0
+    company_hash[:net_income] = "-$#{net_income * -1}"
+  else
+    company_hash[:net_income] = "$#{net_income}"
+  end
+
+  net_income_units = comp_data[3].chars.last
+  case net_income_units
+  when 'M' then company_hash[:net_income_units] = 'million'
+  when 'B' then company_hash[:net_income_units] = 'billion'
+  when 'T' then company_hash[:net_income_units] = 'trillion'
+  end
+
+  company_hash[:market_cap] = comp_data[4].to_f.round(1)
+
+  market_cap_units = comp_data[4].chars.last
+  case market_cap_units
+  when 'M' then company_hash[:market_cap_units] = 'million'
+  when 'B' then company_hash[:market_cap_units] = 'billion'
+  when 'T' then company_hash[:market_cap_units] = 'trillion'
+  end
+
+  company_hash[:returns] = (comp_data[5].to_f * 100).round(1)
+  company_hash[:pe_ratio] = comp_data[6].to_f.round(1)
+  company_hash[:exchange] = comp_data[7]
+  company_hash[:rank] = rank
+  
+  company_hash
+end
+
 def group_stock_data(file)
   { stock_1: stock_data(file, 1),
     stock_2: stock_data(file, 2),
     stock_3: stock_data(file, 3)
+  }
+end
+
+def group_company_data(file)
+  { company_1: company_data(file, 1),
+    company_2: company_data(file, 2),
+    company_3: company_data(file, 3),
+    company_4: company_data(file, 4),
+    company_5: company_data(file, 5),
+    company_6: company_data(file, 6),
+    company_7: company_data(file, 7),
+    company_8: company_data(file, 8),
+    company_9: company_data(file, 9),
+    company_10: company_data(file, 10)
   }
 end
 
@@ -361,6 +428,10 @@ get "/earnings" do
   erb :earnings
 end
 
+get "/biggest_companies" do
+  erb :biggest_companies
+end
+
 get "/earnings_story" do
   @full_name = session[:name]
   @nick_name = session[:name].split[0]
@@ -424,6 +495,22 @@ get "/shareholders_story" do
 
 
   erb :shareholders_story
+end
+
+get "/biggest_companies_story" do
+  @all_companies = group_company_data("top_10.xlsx")
+  @company_1 = @all_companies[:company_1]
+  @company_2 = @all_companies[:company_2]
+  @company_3 = @all_companies[:company_3]
+  @company_4 = @all_companies[:company_4]
+  @company_5 = @all_companies[:company_5]
+  @company_6 = @all_companies[:company_6]
+  @company_7 = @all_companies[:company_7]
+  @company_8 = @all_companies[:company_8]
+  @company_9 = @all_companies[:company_9]
+  @company_10 = @all_companies[:company_10]
+
+  erb :biggest_companies_story
 end
 
 post "/signout" do
@@ -562,4 +649,10 @@ post "/shareholders" do
   session[:sd_3] = params[:sd_3]
 
   redirect "/shareholders_story"
+end
+
+post "/biggest_companies" do
+  session[:type] = params[:type]
+
+  redirect "/biggest_companies_story"
 end

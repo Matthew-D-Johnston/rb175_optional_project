@@ -18,6 +18,9 @@
 <form class="inline" method="get" action="/ownership">
   <button type="submit">5 Companies Owned by X</button>
 </form>
+<form class="inline" method="get" action="/biggest_companies">
+  <button type="submit">10 Biggest X Companies</button>
+</form>
 <% if session[:admin] %>
   <form method="post" action="/signout">
     <p class="user-status">

@@ -177,6 +177,7 @@ def company_data(file, rank)
   company_hash[:pe_ratio] = comp_data[6].to_f.round(1)
   company_hash[:exchange] = comp_data[7]
   company_hash[:rank] = rank
+  company_hash[:description] = load_company_descriptions("company_descriptions")[company_name.gsub(" ", "_")]
   
   company_hash
 end

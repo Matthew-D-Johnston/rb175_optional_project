@@ -10,18 +10,16 @@
 </div>
 <div class="tickers">
   <h2>Tickers</h2>
-    <ul>
-      <li><%= @company_1[:ticker] %></li>
-      <li><%= @company_2[:ticker] %></li>
-      <li><%= @company_3[:ticker] %></li>
-      <li><%= @company_4[:ticker] %></li>
-      <li><%= @company_5[:ticker] %></li>
-      <li><%= @company_6[:ticker] %></li>
-      <li><%= @company_7[:ticker] %></li>
-      <li><%= @company_8[:ticker] %></li>
-      <li><%= @company_9[:ticker] %></li>
-      <li><%= @company_10[:ticker] %></li>
-    </ul>
+      <p><%= @company_1[:ticker] %></p>
+      <p><%= @company_2[:ticker] %></p>
+      <p><%= @company_3[:ticker] %></p>
+      <p><%= @company_4[:ticker] %></p>
+      <p><%= @company_5[:ticker] %></p>
+      <p><%= @company_6[:ticker] %></p>
+      <p><%= @company_7[:ticker] %></p>
+      <p><%= @company_8[:ticker] %></p>
+      <p><%= @company_9[:ticker] %></p>
+      <p><%= @company_10[:ticker] %></p>
 </div>
 <div class="intro">
   <h2>Intro</h2>
@@ -30,7 +28,7 @@
     <li>If we have “tech sector” or “banks” or the company type as a term, link to it on the second mention, or the first mention if it is not in the first sentence or line.</li>
   </ul>
   <p>
-    These are the 10 biggest <%= session[:type].downcase %> companies by 12-month trailling <a href="https://www.investopedia.com/terms/t/ttm.asp">(TTM)</a> revenue. This list is limited to companies which are publicly traded in the U.S. or Canada, either directly or through <a href="https://www.investopedia.com/terms/a/adr.asp">ADRs</a>. Data is courtesy of YCharts.com. (YCharts. "<a href="https://ycharts.com/">Financial Data</a>." Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.) All figures are as of <%= date[:month] %> <%= date[:day] %>.
+    These are the 10 biggest <%= session[:type].downcase %> companies by 12-month trailing <a href="https://www.investopedia.com/terms/t/ttm.asp">(TTM)</a> revenue. This list is limited to companies which are publicly traded in the U.S. or Canada, either directly or through <a href="https://www.investopedia.com/terms/a/adr.asp">ADRs</a>. Data is courtesy of YCharts.com. (YCharts. "<a href="https://ycharts.com/">Financial Data</a>." Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.) All figures are as of <%= date[:month] %> <%= date[:day] %>.
   </p>
   <p>
     <% @all_companies.each do |_, company| %>

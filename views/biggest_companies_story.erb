@@ -28,7 +28,7 @@
     <li>If we have “tech sector” or “banks” or the company type as a term, link to it on the second mention, or the first mention if it is not in the first sentence or line.</li>
   </ul>
   <p>
-    These are the 10 biggest <%= session[:type].downcase %> companies by 12-month trailing <a href="https://www.investopedia.com/terms/t/ttm.asp">(TTM)</a> revenue. Some foreign companies may report semiannually, and so may have longer lag times. This list is limited to companies which are publicly traded in the U.S. or Canada, either directly or through <a href="https://www.investopedia.com/terms/a/adr.asp">ADRs</a>. Data is courtesy of YCharts.com. (YCharts. "<a href="https://ycharts.com/">Financial Data</a>." Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.) All figures are as of <%= date[:month] %> <%= date[:day] %>.
+    These are the 10 biggest <%= session[:type].downcase %> companies by 12-month trailing <a href="https://www.investopedia.com/terms/t/ttm.asp">(TTM)</a> revenue. Some companies outside the U.S. report profits semi-annually instead of quarterly, so the 12-month trailing data may be older than it is for companies that report quarterly. This list is limited to companies which are publicly traded in the U.S. or Canada, either directly or through <a href="https://www.investopedia.com/terms/a/adr.asp">ADRs</a>. Data is courtesy of YCharts.com. (YCharts. "<a href="https://ycharts.com/">Financial Data</a>." Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.) All figures are as of <%= date[:month] %> <%= date[:day] %>.
   </p>
   <p>
     <% @all_companies.each do |_, company| %>

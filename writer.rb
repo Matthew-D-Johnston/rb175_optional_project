@@ -553,6 +553,11 @@ post "/etfs" do
   session[:period] = params[:period]
   session[:num_etfs] = params[:num_etfs]
 
+  session[:sector_index] = params[:sector_index]
+  session[:sector_performance] = params[:sector_performance]
+  session[:market_index] = params[:market_index]
+  session[:market_performance] = params[:market_performance]
+
   ticker_1 = params[:etf_1]
   ticker_2 = params[:etf_2]
   ticker_3 = params[:etf_3]

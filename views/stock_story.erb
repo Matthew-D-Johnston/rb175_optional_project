@@ -17,7 +17,7 @@
 <div class="intro">
   <h2>Intro</h2>
   <p>
-    <%= session[:type] %> stocks, as represented by the <%= session[:sector_index] %>, have <%= compare_performance %> the broader market, providing investors with a total return of <%= session[:index_return] %> compared to the S&P 500's total return of <%= session[:sp500_return] %> over the past 12 months (YCharts. "<a href="https://ycharts.com/">Financial Data</a>." Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.). These market performance numbers and the statistics in the tables below are as of <%= date[:month] %> <%= date[:day] %>.
+    <%= session[:type] %> stocks, as represented by the <%= session[:sector_index] %>, have <%= compare_performance %> the broader market, providing investors with a total return of <%= session[:index_return] %> compared to the Russell 1000's total return of <%= session[:sp500_return] %> over the past 12 months (YCharts. "<a href="https://ycharts.com/">Financial Data</a>." Accessed <%= date[:month][0..2] %>. <%= date[:day] %>, <%= date[:year] %>.). These market performance numbers and the statistics in the tables below are as of <%= date[:month] %> <%= date[:day] %>.
   </p>
   <p>
     <% if session[:earn_or_sales] == "E" %>
@@ -120,7 +120,7 @@
         <%= data[:return] %>
       </p>
     <% end %>
-    <p>S&P 500 N/A N/A <%= session[:sp500_return].gsub("%", "") %></p>
+    <p>Russell 1000 N/A N/A <%= session[:sp500_return].gsub("%", "") %></p>
     <p><%= session[:sector_index] %> N/A N/A <%= session[:index_return].gsub("%", "") %></p>
     <p>Source: <a href="https://ycharts.com/">YCharts</a></p>
   </div>

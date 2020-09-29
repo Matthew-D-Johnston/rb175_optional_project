@@ -3,7 +3,7 @@
   <ul>
     <li><b>HEADING:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
     <li><b>SOCIAL TITLE:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
-    <li><b>SUBHEADING:</b> <%= @value[:stock_1][:ticker] %>, <%= @growth[:stock_1][:ticker] %>, and <%= @momentum[:stock_1][:ticker] %> were top for value, growth, and momentum, respectively</li> 
+    <li><b>SUBHEADING:</b> <%= @value[:stock_1][:ticker] %>, <%= @growth[:stock_1][:ticker] %>, and <%= @momentum[:stock_1][:ticker] %> are top for value, growth, and momentum, respectively</li> 
     <li><b>META TITLE:</b> Top <%= session[:type] %> Stocks for <%= session[:period] %></li>
     <li><b>META DESCRIPTION:</b> These are the <%= session[:type].downcase %> stocks with the best value, fastest growth, and most momentum for <%= session[:period] %>.</li>
   </ul>
@@ -21,9 +21,9 @@
   </p>
   <p>
     <% if session[:earn_or_sales] == "E" %>
-      Here are the top 3 <%= session[:type].downcase %> stocks with the best value, the fastest earnings growth, and the most momentum.
+      Here are the top 3 <%= session[:type].downcase %> stocks with the best value, the fastest growth, and the most momentum.
     <% else %>
-      Here are the top 3 <%= session[:type].downcase %> stocks with the best value, the fastest sales growth, and the most momentum.
+      Here are the top 3 <%= session[:type].downcase %> stocks with the best value, the fastest growth, and the most momentum.
     <% end %>
   </p>
 </div>

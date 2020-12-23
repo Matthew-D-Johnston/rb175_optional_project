@@ -547,8 +547,7 @@ Royal_Gold_Inc: Royal Gold engages in the acquisition and management of precious
 S&P_Global_Inc: S&P Global provides financial information services. The company offers
   ratings, benchmarks, analytics, and data in the global capital and commodity markets.
 SBA_Communications_Corp: SBA Communications owns and operates wireless communications
-  infrastructure. SBA Communications leases antenna space to various wireless service
-  providers.
+  infrastructure. The company leases antenna space to various wireless service providers.
 SciPlay_Corp: SciPlay designs and publishes video games for mobile and web platforms,
   with titles including Jackpot Party Casino and Monopoly Slots.
 SeaChange_International_Inc: SeaChange International develops software related to
@@ -585,7 +584,7 @@ Southern_Co: Southern is a public utility holding company that, through its subs
   also offers wireless telecommunications services, two-way radio, telephone, paging,
   and internet access services, and offers wholesale fibre optic solutions.
 Southwestern_Energy_Co: Southwestern Energy is an energy company that engages in natural
-  gas and oil exploration, development and production.
+  gas and oil exploration, development, and production.
 Sprott_Inc: Sprott is a Canada-based alternative asset management company that provides
   investment management services, including portfolio management, broker-dealer activities,
   and consulting services to its clients, including those from the cannabis industry.
@@ -732,9 +731,9 @@ Noble_Midstream_Partners_LP: Noble Midstream Partners is a master limited partne
   infrastructure.
 Seven_Generations_Energy_Ltd: Seven Generations is a natural gas producer based in
   Canada.
-Clean_Energy_Fuels_Corp: Clean Energy Fuels Corp is a producer of renewable natural
-  gas. That means they create natural gas from decomposing organic waste, rather than
-  extracting it from underground deposits.
+Clean_Energy_Fuels_Corp: Clean Energy Fuels is a producer of renewable natural gas.
+  That means they create natural gas from decomposing organic waste, rather than extracting
+  it from underground deposits.
 Sasol_Ltd: Sasol is a South African energy and chemical conglomerate. It is an integrated
   oil and gas company as well as a chemical producer.
 Advantage_Oil_&_Gas_Ltd: Advantage is a Canadian oil and natural gas producer, with
@@ -1081,9 +1080,10 @@ Celsius_Holdings_Inc: Celsius is a holding company that develops, sells, and dis
   calorie-burning beverages. It offers a variety of different beverage flavors and
   markets its beverages through multiple channels, including grocery, drug, convenience,
   and nutrition stores, as well as gyms.
-SunOpta_Inc: SunOpta owns and operates businesses in the natural and organic food
-  markets. The company offers organic grains and seeds, raw material ingredients,
-  plant-based beverages, broths, teas, nutritional beverages, frozen fruit, and more.
+SunOpta_Inc: SunOpta is a Canada-based company that owns and operates businesses in
+  the natural and organic food markets. The company offers organic grains and seeds,
+  raw material ingredients, plant-based beverages, broths, teas, nutritional beverages,
+  frozen fruit, and more.
 Utz_Brands_Inc: Utz Brands manufactures and distributes branded snack food products.
   It offers a range of salty snacks, including potato chips, pretzels, cheese snacks,
   veggie snacks, pork skins, tortilla chips, and more.
@@ -1256,3 +1256,305 @@ Antero_Midstream_Corp: Antero Midstream owns, operates, and develops midstream e
 EQT_Corp: EQT is an integrated energy company focused on natural gas production, gathering,
   and transmission in the Appalachian area. The company explores for and produces
   natural gas, natural gas liquids, and crude oil.
+Ford_Motor_Co: Ford Motor is a designer and manufacturer of cars and trucks. The company
+  also provides vehicle servicing, financing, leasing, and insurance.
+Sibanye_Stillwater_Ltd: Sibanye Stillwater is a South Africa-based mining company
+  that develops and extracts mineral properties. The company serves customers in South
+  Africa and the U.S.
+Pure_Gold_Mining_Inc: Pure Gold Mining is a Canada-based mining company focused on
+  the exploration and development of gold properties in Canada.
+Brookfield_Property_REIT_Inc: Brookfield Property is a REIT that owns, develops, builds,
+  manages, and leases various commercial properties. Among the company's portfolio
+  of properties are restaurants, malls, entertainment facilities, and parking areas.
+Equity_Commonwealth: Equity Commonwealth is a REIT that owns office buildings in major
+  metropolitan markets throughout the U.S. A special focus of the company is on medical-related
+  tenants and on properties leased to the U.S. government.
+Americold_Realty_Trust: Americold Realty Trust provides temperature-controlled food
+  warehousing as well as related services including consolidation, logistics, and
+  shipment management. The company's customers include food producers, distributors,
+  wholesalers, restaurants, and retailers.
+CoStar_Group_Inc: CoStar provides information, analytics, and online marketplaces
+  for commercial real estate. The company's products include research and real-time
+  data, a mobile and online real estate marketplace, comparative analytics for the
+  hotel industry, and similar offerings.
+Jushi_Holdings_Inc: Jushi Holdings is a holding company focused on building a portfolio
+  of branded cannabis and hemp-based assets engaged in retail, distribution, cultivation,
+  and processing operations.
+PG&E_Corp: PG&E operates as a holding company that maintains interests in energy businesses.
+  The company's holdings include public utilities in California, electricity generation
+  operations, natural gas operations, and more.
+Transportadora_de_Gas_del_Sur_SA: Transportadora de Gas del Sur is an Argentina-based
+  natural gas producer that transports and processes natural gas. The company's system
+  of pipelines connects major gas fields in Southern and Western Argentina with gas
+  distributors in those areas and in the greater Buenos Aires area.
+Enable_Midstream_Partners_LP: Enable Midstream Partners operates and develops natural
+  gas and crude oil infrastructure assets. The company provides oil and gas services,
+  including gathering, processing, transporting, and storing.
+Helix_Energy_Solutions_Group_Inc: Helix Energy Solutions is an offshore energy company
+  focused on subsea construction, and maintenance and salvage services to the offshore
+  natural gas and oil industry. The company also offers well intervention and robotics
+  operations to the offshore energy industry.
+Africa_Energy_Corp: Africa Energy is a Canada-based oil and gas company focused on
+  the acquisition, exploration, and production of oil and gas properties in South
+  Africa and Namibia.
+EnLink_Midstream_LLC: EnLink Midstream is an independent midstream energy services
+  company providing supply and marketing services to consumers and producers. The
+  company engages in natural gas gathering, treating, processing, transmission, distribution,
+  supply, and marketing, and crude oil marketing.
+Ultrapar_Participacoes_SA: Ultrapar Participacoes is a Brazil-based holding company
+  whose subsidiaries provide gas and petrochemical storage and distribution services.
+Antero_Resources_Corp: Antero Resources is an oil and gas exploration and production
+  company. It focuses on the acquisition, development, and production of unconventional
+  oil and liquids-rich natural gas properties.
+ReneSola_Ltd: ReneSola is a China-based renewable energy company that builds and manages
+  energy projects. The company primarily focuses on the development, construction
+  management, and financing of solar power projects.
+Amneal_Pharmaceuticals_Inc: Amneal Pharmaceuticals specializes in the development
+  and manufacture of generic and biosimilar pharmaceutical products.
+Phibro_Animal_Health_Corp: Phibro Animal Health is a global animal health and mineral
+  nutrition company. It offers various products including antibacterials, anticoccidials,
+  vaccines, nutritional specialty products, and mineral nutrition products for the
+  treatment of animals.
+IM_Cannabis_Corp: IM Cannabis is a medical cannabis company. It offers a wide variety
+  of government-licensed cannabis products, including generic and pharmaceutical-grade
+  products for both wholesale and retail clients. The company was formed in Canada
+  and has a head office in Israel.
+Accor_SA: Accor is a France-based hospitality company that owns, manages, and franchises
+  hotels, resorts, and vacation facilities.
+Wyndham_Hotels_&_Resorts_Inc: Wyndham Hotels & Resorts owns and operates a hotel and
+  resort chain. It offers amenities, resorts, meetings and events spaces, wedding
+  venues, and more.
+Hersha_Hospitality_Trust: Hersha Hospitality is a REIT that owns and operates upscale
+  and mid-scale limited service and extended-stay hotels located in established metropolitan
+  markets.
+Sunstone_Hotel_Investors_Inc: Sunstone Hotel Investors is a REIT focused on hospitality
+  and lodging. It owns primarily upper scale hotels throughout the U.S. and operates
+  under various brand names.
+Nestle_SA: Consumer staples stock Nestlé is a Switzerland-based multinational packaged
+  food company offering a wide variety of products ranging from baby food and bottled
+  water to dairy products, frozen food, coffee, and more.
+Restaurant_Brands_International_Inc: Part of the consumer discretionary sector, Restaurant
+  Brands International is a Canada-based holding company born out of the 2014 merger
+  of Burger King and Tim Hortons. The company also owns Popeyes, the Louisiana fried
+  chicken franchise. Tim Hortons remains one of the largest coffee shop and restaurant
+  chains in Canada.
+Keurig_Dr_Pepper_Inc: Keurig Dr Pepper is a consumer staples company that makes and
+  distributes non-alcoholic beverage products including coffee. The company serves
+  customers throughout North America.
+TORM_PLC: TORM is a Denmark-based petroleum transport company. The company transports
+  clean petroleum products including jet fuel, gasoline and diesel. It owns and operates
+  a fleet of tankers.
+Hoegh_LNG_Partners_LP: Hoegh LNG Partners is a Norway-based energy company that offers
+  floating liquefied natural gas (LNG) services. Its primary business includes the
+  ownership and operation of floating storage and regasification units as well as
+  liquid natural gas carriers and related equipment.
+Whiting_Petroleum_Corp: Whiting Petroleum is an oil and gas exploration company. The
+  firm acquires, explores, and produces a variety of petroleum products.
+Dunkin'_Brands_Group_Inc: Dunkin' Brands Group franchises quick service restaurants
+  that serve hot and cold coffee, baked goods, and ice cream. The company franchises
+  restaurants under its Dunkin' (formerly "Dunkin' Donuts") and Baskin-Robbins brands.
+Starbucks_Corp: Starbucks retails, roasts, and provides its own brand of specialty
+  coffee. The company operates retail locations throughout the world and sells whole
+  bean coffee through various channels. Starbucks also offers other beverages, complementary
+  food, as well as a focused selection of merchandise at some locations.
+CSX_Corp: CSX provides international freight transportation services. The company
+  offers rail, domestic container shipping, barging, intermodal, and contract logistics
+  services between hubs around the world. The company's rail transportation services
+  are focused in the eastern U.S.
+Steel_Dynamics_Inc: Steel Dynamics is a carbon steel producer and metals recycler.
+  It offers a range of steel products, including flat rolled steel sheets and structural
+  beams.
+Kumba_Iron_Ore_Ltd: Kumba Iron Ore is a South Africa-based company involved in the
+  mining and production of iron ore.
+Gerdau_SA: Gerdau is a Brazil-headquartered steel manufacturer with operations in
+  the Americas, Europe, and Asia. The company follows the practice of mini mill steel
+  production by which it turns scraps into steel.
+Check_Point_Software_Technologies_Ltd: Check Point Software Technologies develops
+  and builds both software and hardware products for information technology (IT) security.
+  The company offers network and gateway security services, data and endpoint security
+  services, and management solutions.
+Qualys_Inc: Qualys offers IT security and compliance management services. The company's
+  product offerings address vulnerability management, malware detection, policy compliance,
+  web application scanning, and similar security issues.
+CACI_International_Inc: CACI International is an information technology products and
+  services company. The company provides information assurance and security as well
+  as systems integration, reengineering, electronic commerce, and related services.
+Zscaler_Inc: Zscaler provides security software and related services. The company
+  offers a cloud-based web and mobile security platform that also addresses threat
+  protection, cloud application visibility, and networking challenges.
+Cloudflare_Inc: Cloudflare is an application software company. Among Cloudflare's
+  offerings are solutions for cybersecurity, analysis, domain registration, load balancing,
+  and video streaming.
+Carrefour: Carrefour is a France-based retail distribution group that operates supermarkets,
+  hypermarkets, cash and carry stores, and e-commerce websites. The company offers
+  consumer goods, food products, household supplies, electronics, home appliances,
+  and more.
+JBS_SA: JBS SA is a Brazil-based meat processing company. It processes a range of
+  meat products, including beef, pork, lamb, and chicken. The company also processes
+  animal hides and is involved in leather tanning.
+Maple_Leaf_Foods_Inc: Maple Leaf Foods is a Canada-based producer of food products,
+  which include fresh and prepared meats, poultry, flours, pasta, seafood, and more.
+George_Weston_Ltd: George Weston is a Canada-based holding company that, through its
+  subsidiaries, processes and distributes various food products.
+National_Beverage_Corp: National Beverage is a holding company whose subsidiaries
+  manufacture and distribute a full line of beverage products. Those products include
+  multi-flavored and cola soft drinks, juice and juice products, flavored carbonated
+  and spring water products, and more.
+International_Seaways_Inc: International Seaways owns and operates a fleet of oceangoing
+  vessels that are used in the transportation of crude oil and petroleum products.
+Exela_Technologies_Inc: Exela Technologies is a global business process automation
+  company. It offers work flow automation, digital mail rooms, print communications,
+  payment processing, and more.
+Conduent_Inc: Conduent is a business process services company specializing in transaction-intensive
+  processing, analytics, and automation.
+9F_Inc: 9F is a China-based provider of IT services. It provides a digital financial
+  accounting platform for integrating and personalizing solutions. The company also
+  offers an online shopping platform.
+Resonant_Inc: Resonant produces filter designs for radio frequency (RF) front-ends
+  for the mobile device industry. Its products are used in the configuration of resonators,
+  which are used to select RF signals and reject unwanted signals.
+Ideanomics_Inc: Ideanomics operates as a financial technology (fintech) company that
+  specializes in facilitating the adoption of commercial electric vehicles and developing
+  financial services and fintech products.
+Peak_Fintech_Group_Inc: Peak Fintech Group is a Canada-based provider of financial
+  software solutions. It provides an ecosystem that automates the process for lenders
+  to find borrowers, allowing banks and other lenders to safely increase loan volumes.
+SunHydrogen_Inc: SunHydrogen, formerly known as HyperSolar, provides renewable energy
+  services. The company is developing a system to produce renewable hydrogen using
+  sunlight and water.
+Loop_Insights_Inc: Loop Insights is a Canada-based provider of technology solutions,
+  offering digital advertising, marketing, research, and other related activities
+  for retailers.
+Waitr_Holdings_Inc: Waitr Holdings operates an online food ordering and delivery platform
+  that connects local restaurants to customers in the southeast U.S.
+Flex_LNG_Ltd: Flex LNG is a Bermuda-based owner and operator of liquefied natural
+  gas (LNG) carriers. Its fleet is used to transport LNG.
+Touchstone_Exploration_Inc: Touchstone Exploration is a Canada-based upstream oil
+  and gas company. It explores and develops oil and natural gas deposits.
+Headwater_Exploration_Inc: Headwater Exploration is a Canada-based energy producer
+  that explores and develops oil and natural gas assets.
+Silvercorp_Metals_Inc: Silvercorp Metals is a Canada-based mining company that acquires,
+  explores, and develops mineral properties in China. The company produces silver,
+  lead, and zinc metals.
+Fortuna_Silver_Mines_Inc: Fortuna Silver Mines is a Canada-based mining company focused
+  on silver mining in Latin America. The company operates silver, lead, zinc, and
+  gold mines.
+Pan_American_Silver_Corp: Pan American Silver is a Canada-based mining company focused
+  on the production of sliver, gold, zinc, lead, and copper. The company's mining
+  activities include exploration, extraction, processing, refining, and reclamation.
+First_Majestic_Silver_Corp: First Majestic Silver is a Canada-based mining company
+  engaged in the acquisition, exploration, development, and production of mineral
+  properties. Its primary focus is on silver production in Mexico.
+Endeavour_Silver_Corp: Endeavour Silver is a Canada-based mining company focused on
+  silver properties in Mexico. It engages in property acquisition, exploration, development,
+  mineral extraction, processing, refining, and reclamation.
+MAG_Silver_Corp: MAG Silver is a Canada-based mineral exploration and development
+  company. The company is focused on exploring for silver, lead, and zinc within the
+  Mexican silver belt.
+Labrador_Iron_Ore_Royalty_Corp: Labrador Iron Ore Royalty is a Canada-based company
+  that operates as an unincorporated open-ended trust. It owns interests in the Iron
+  Ore Company of Canada and holds an overriding royalty on all iron ore products produced,
+  sold, delivered, and shipped by that company.
+Stelco_Holdings_Inc: Stelco Holdings is a Canada-based holding company that, through
+  its subsidiaries, produces flat-rolled, coated, and cold-rolled steel products.
+  Its products are used in the construction, automotive, and energy industries.
+A10_Networks_Inc: 10 Networks is a provider of computer networking products and security
+  solutions. It offers a range of hardware, software, and cloud-based products, such
+  as controller, firewall, protection systems, and more.
+Ribbon_Communications_Inc: Ribbon Communications provides network solutions for communications
+  services providers and enterprises. It offers session border controllers, policy
+  and routing servers, media and signaling gateways, cloud, mobility solutions, and
+  more.
+Fortinet_Inc: Fortinet is a network security company that offers cybersecurity solutions
+  to a range of enterprises, service providers, and government organizations. Its
+  systems utilize a variety of security technologies including firewall, VPN, antivirus,
+  intrusion prevention, antispam, and more.
+CrowdStrike_Holdings_Inc: Crowdstrike Holdings is a holding company whose subsidiaries
+  offer a cybersecurity platform that provides a range of products including antivirus,
+  endpoint detection and response, device control, vulnerability management, threat
+  intelligence, and more.
+Kandi_Technologies_Group_Inc: Kandi Technologies Group is a China-based company primarily
+  focused on the development and production of electric vehicle products, parts, and
+  off-road vehicles. It produces all-terrain vehicles (ATVs), utility vehicles, go-karts,
+  motorcycles, and other vehicles.
+Tesla_Inc: Tesla is primarily engaged in the design and manufacture of electric cars,
+  SUVs and trucks, as well as electric vehicle powertrain components. The automaker
+  also manufactures and installs solar energy generation and energy storage products.
+NIO_Inc: NIO is a China-based manufacturer of smart and connected electric vehicles,
+  and related parts. Its vehicles are equipped with assisted-driving features and
+  next generation technologies.
+Workhorse_Group_Inc: Workhorse Group designs and builds electric vehicles and aircraft,
+  including cargo vans, medium and light-duty pickup trucks, delivery drones, and
+  electric vehicle take-off and landing (eVTOL) aircrafts. The company also designs
+  cloud-based, real-time telematics performance monitoring systems.
+Arcimoto_Inc: 'Arcimoto develops and manufactures three-wheeled electric vehicles.
+  Its three main vehicle designs include: a fun utility vehicle, a vehicle for first
+  responders, and a last-mile delivery vehicle.'
+Blink_Charging_Co: Blink Charging owns and operates electric vehicle charging equipment
+  and a network of charging stations. The company serves residential consumers as
+  well as building owners, parking garages, municipalities, sporting venues, and other
+  public areas.
+Stratasys_Ltd: Stratasys manufactures 3-D printers used in the process of designing
+  and manufacturing various products. Its products and services are used in aerospace,
+  automotive, consumer electronics, consumer goods, education, dental, and other areas.
+3D_Systems_Corp: 3D Systems is a holding company that provides 3-D printing solutions,
+  including 3-D printers, print materials, software, on-demand manufacturing services,
+  and digital design tools. Its solutions are used in healthcare, aerospace, automotive,
+  and other industries.
+Proto_Labs_Inc: Proto Labs provides rapid low-volume manufacturing of custom parts
+  for prototyping and short-run production. It offers 3-D printing, computer numerical
+  control (CNC) machining, sheet metal fabrication, and injection molding services.
+Materialise_NV: Materialise is a Belgium-based company that provides rapid prototype
+  design and manufacturing. It utilizes 3-D printing technology to develop products
+  for industrial, medical, and dental industries.
+Synnex_Corp: Synnex is a provider of IT supply chain services. It offers a range of
+  distribution, logistics, and integration services to the technology industry.
+Coherent_Inc: Coherent manufactures laser-based photonics products, which are used
+  in manufacturing and instrumentation applications such as optical telecommunication,
+  semiconductor manufacturing, advance packaging, and more.
+Qualcomm_Inc: Qualcomm is a multinational semiconductor and telecommunications equipment
+  company. It develops digital wireless communications products and services and is
+  engaged in the expansion of 5G technology.
+Virtu_Financial_Inc: Virtu Financial is a financial services company that acts as
+  a market maker. It provides liquidity, execution services and data, analytics, and
+  other services.
+Aflac_Inc: Aflac is a holding company whose subsidiaries provide supplemental insurance
+  to individuals in the U.S. and Japan. Its products include insurance for risks such
+  as accident and disability, cancer expense, short-term disability, hospital intensive
+  care, and more.
+Jefferies_Financial_Group_Inc: Jefferies Financial Group is a global diversified financial
+  services company focused on investment banking and capital markets, asset management,
+  and direct investing.
+White_Mountains_Insurance_Group_Ltd: White Mountains Insurance Group is a holding
+  company whose subsidiaries provide insurance services. It offers property and casualty
+  insurance and reinsurance products.
+KKR_&_Co_Inc: KKR & Co. is a global investment firm engaged in managing investments
+  across multiple asset classes, including private equity, energy, health care, infrastructure,
+  real estate, credit, and hedge funds.
+Brandywine_Realty_Trust: Brandywine Realty Trust is a self-administered and self-managed
+  REIT that owns, leases, develops, and manages primarily suburban office properties.
+  It also has an ownership interest in and operates a commercial real estate management
+  services company.
+The_Howard_Hughes_Corp: Howard Hughes develops and manages master planned communities,
+  shopping malls, and mixed-use properties.
+W.P._Carey_Inc: W.P. Carey is a self-managed diversified REIT that owns and manages
+  commercial real estate, primarily net leased to companies on a long-term basis.
+  It provides long-term sale-leaseback and build-to-suit financing solutions. The
+  company also manages a series of non-traded REITs.
+Taubman_Centers_Inc: Taubman Centers, through its operating partnership Taubman Realty
+  Group LP, holds interests in and owns, develops, and operates regional shopping
+  centers. It engages in shopping center management, leasing, and expansion.
+Vistra_Corp: Vistra operates an integrated retail and generation business. It provides
+  electricity generation, wholesale energy sales and purchases, commodity risk management,
+  and retail sales of electricity.
+Smith_&_Wesson_Brands_Inc: Smith & Wesson Brands manufactures firearms, including
+  pistols, revolvers, rifles, and other related products and accessories.
+National_Vision_Holdings_Inc: National Vision Holdings is an optical retail company.
+  It offers various eye-care products and services, including eye exams, eyeglasses,
+  and contact lenses.
+FuelCell_Energy_Inc: FuelCell Energy provides fuel cell power solutions. It develops
+  fuel cell power plants for electric power generation, and has contracts to develop
+  fuel cells for alternative fuels and for marine transportation applications.
+OrganiGram_Holdings_Inc: OrganiGram Holdings is a Canada-based licensed medical marijuana
+  producer. Through its subsidiaries, the company offers dried cannabis and cannabis
+  oil.
